@@ -1,0 +1,22 @@
+// -*- mode: jsonc -*-
+{
+  // This is just a list of folders to applications compiled from source
+  // It is used to automatically append changes to README.md
+  "source_application_paths": [
+    "/opt",
+    "~/.config/opt"
+  ],
+  "ignore_patterns": [
+    // Rust stuff
+    "*/target",
+    "*/.no_backup"
+  ],
+  "folders": {
+    "fish": "~/.config/fish",
+    "hypr": "~/.config/hypr",
+    "waybar": "~/.config/waybar",
+    "kitty": "~/.config/kitty",
+    "dunst": "~/.config/dunst",
+    "pinnacle": "~/.config/pinnacle"
+  }
+}
