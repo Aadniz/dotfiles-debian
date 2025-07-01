@@ -9,10 +9,12 @@
   "ignore_patterns": [
     // Rust stuff
     "*/target",
-    "*/.no_backup"
+    "*/.no_backup",
+    "*.swp"
   ],
   "folders": {
     "fish": "~/.config/fish",
+    "wofi": "~/.config/wofi",
     "hypr": "~/.config/hypr",
     "waybar": "~/.config/waybar",
     "kitty": "~/.config/kitty",
