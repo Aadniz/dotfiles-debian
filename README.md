@@ -73,9 +73,9 @@ All the packages installed from source (or not found in apt)
 | Name                   | Link                                                     | Last Updated |
 |------------------------|----------------------------------------------------------|--------------|
 | anki-25.02.7-linux-qt6 | -                                                        | 2025-05-15   |
-| pinnacle               | [Source link](https://github.com/pinnacle-comp/pinnacle) | 2025-06-28   |
 | Element-Nightly        | -                                                        | 2025-06-28   |
 | Signal                 | -                                                        | 2025-06-28   |
+| pinnacle               | [Source link](https://github.com/pinnacle-comp/pinnacle) | 2025-06-28   |
 | termdown               | [Source link](https://github.com/trehn/termdown)         | 2025-06-28   |
 | hyprsome               | [Source link](https://github.com/sopa0/hyprsome)         | 2025-06-29   |
 | Hyprshot               | [Source link](https://github.com/Gustash/Hyprshot)       | 2025-06-29   |
