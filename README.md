@@ -63,6 +63,7 @@ Installed packages with apt
 | rsync               | Used for transferring files locally or over SSH                         | 2025-06-30 |
 | python3-venv        | This is for `python3 -m venv .venv`                                     | 2025-06-30 |
 | fonts-firacode      | I like this font                                                        | 2025-06-30 |
+| waydroid            | Android emulator                                                        | 2025-07-01 |
 <!--END_APT_PACKAGES-->
 
 ### Source packages
@@ -73,12 +74,12 @@ All the packages installed from source (or not found in apt)
 | Name                   | Link                                                     | Last Updated |
 |------------------------|----------------------------------------------------------|--------------|
 | anki-25.02.7-linux-qt6 | -                                                        | 2025-05-15   |
-| Element-Nightly        | -                                                        | 2025-06-28   |
 | Signal                 | -                                                        | 2025-06-28   |
 | pinnacle               | [Source link](https://github.com/pinnacle-comp/pinnacle) | 2025-06-28   |
 | termdown               | [Source link](https://github.com/trehn/termdown)         | 2025-06-28   |
-| hyprsome               | [Source link](https://github.com/sopa0/hyprsome)         | 2025-06-29   |
+| hyprsome               | [Source link](https://github.com/Aadniz/hyprsome)        | 2025-06-29   |
 | Hyprshot               | [Source link](https://github.com/Gustash/Hyprshot)       | 2025-06-29   |
 | spotify-adblock        | [Source link](https://github.com/abba23/spotify-adblock) | 2025-06-30   |
 | Jetbrains              | -                                                        | 2025-06-30   |
+| Element-Nightly        | -                                                        | 2025-07-01   |
 <!--END_SOURCE_PACKAGES-->
