@@ -118,16 +118,15 @@ def get_apt_applications() -> List[Dict[str, str]]:
             print(f"Warning: Could not process {log_file}: {e}")
             continue
 
-    installed_pkgs = [pkg for (pkg_name, pkg) in pkgs.items() if pkg["installed"]]
-
     user_apps = []
-    for pkg in installed_pkgs:
+    for pkg in pkgs.values():
         desc = _get_package_description(pkg["name"])
 
         user_apps.append({
             'name': pkg["name"],
             'description': desc,
-            'date': pkg["date"]
+            'installed': pkg["installed"],
+            'date': pkg["date"],
         })
 
     return sorted(user_apps, key=lambda x: x['date'])
@@ -200,8 +199,11 @@ def _is_system_package(pkg: str) -> bool:
     return any(re.search(pattern, pkg) for pattern in system_patterns)
 
 
-def _get_package_description(pkg: str) -> str:
+def _get_package_description(pkg: str) -> None|str:
     """Get package description using apt-cache."""
+    if not _is_system_package(pkg):
+        return None
+
     try:
         result = subprocess.run(
             ['apt-cache', 'show', pkg],
@@ -214,7 +216,7 @@ def _get_package_description(pkg: str) -> str:
                 return line[13:]
     except subprocess.CalledProcessError:
         pass
-    return ""
+    return None
 
 def get_git_link(git_repo_path: str | PathLike[str]):
     git_remote = None
