@@ -8,32 +8,21 @@
     // Choose the order of the modules
     "modules-left": [
         "hyprland/workspaces",
-        "sway/mode",
-        "sway/scratchpad",
         "custom/media"
     ],
     "modules-right": [
-        "mpd",
-        "idle_inhibitor",
-        "pulseaudio",
-        "network",
-        "power-profiles-daemon",
-        "cpu",
+        "custom/cpu",
         "memory",
-        "temperature",
-        "backlight",
-        "keyboard-state",
-        "sway/language",
-        "battery",
-        "battery#bat2",
-        "clock",
+        "pulseaudio",
         "tray",
-        "custom/power"
+        "clock#date",
+        "custom/kanji-day",
+        "clock#time",
     ],
     // Modules configuration
     "hyprland/workspaces": {
         "format": "{icon}",
-	"format-icons": {
+        "format-icons": {
             "1": "一",
             "2": "二",
             "3": "三",
@@ -64,7 +53,7 @@
             "28": "八",
             "29": "九",
             "30": "十",
-	},
+        },
         "on-scroll-up": "hyprctl dispatch workspace m-1",
         "on-scroll-down": "hyprctl dispatch workspace m+1",
         "persistent-workspaces": {
@@ -146,17 +135,27 @@
         // "icon-size": 21,
         "spacing": 10
     },
-    "clock": {
-        // "timezone": "America/New_York",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%Y-%m-%d}"
+    "clock#time": {
+        "format": "{:%T}",
+        "interval": 1
     },
-    "cpu": {
-        "format": "{usage}% ",
-        "tooltip": false
+    "clock#date": {
+        "format": "{:%Y-%m-%d}",
+        "interval": 1
+    },
+    "custom/kanji-day": {
+        "format": "{}",
+        "exec": "echo '月火水木金土日' | cut -c $(( $(date +%u)*3-2 ))-$(( $(date +%u)*3 ))",
+        "interval": 1
+    },
+    "custom/cpu": {
+        "format": "{} ",
+        "exec": "~/.config/waybar/cpu_usage.sh",
+        "tooltip": true,
+        "interval": 1
     },
     "memory": {
-        "format": "{}% "
+        "format": "{}% "
     },
     "temperature": {
         // "thermal-zone": 2,
@@ -215,8 +214,8 @@
         "format-bluetooth": "{volume}% {icon} {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
         "format-muted": " {format_source}",
-        "format-source": "{volume}% ",
-        "format-source-muted": "",
+        //"format-source": "{volume}% ",
+        //"format-source-muted": "",
         "format-icons": {
             "headphone": "",
             "hands-free": "",

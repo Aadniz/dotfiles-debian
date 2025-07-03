@@ -2,32 +2,30 @@
 
 * {
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
-    font-size: 13px;
 }
 
 window#waybar {
     font-family: "Font-Awesome-6-Edited";
-    font-size: 11pt;
+    font-size: 13px;
     background-color: @background;
     color: @foreground;
 }
-	
+
 .modules-left, .modules-center, .modules-right {
     margin-left: 8px;
     margin-right: 8px;
     border-radius: 16px;
     background-color: @grey;
 }
-    	
+
 #workspaces, #cpu, #memory, #pulseaudio, #battery, #custom-pa-mute, #custom-camera-blank, #idle_inhibitor, #tray {
     margin: 0 8px;
 }
-    	
+
 #workspaces {
     margin-left: 0;
 }
-    	
+
 #workspaces button, #idle_inhibitor, #custom-pa-mute, #custom-camera-blank {
     border: none;
     background-color: transparent;
@@ -47,45 +45,46 @@ window#waybar {
 #custom-kanji-day {
     padding: 8px;
     margin: 0 2px;
-    background-color: @primary;
+    background-color: @secondary;
+    color: @background;
     border-radius: 16px;
 }
-      #clock.date {
-        margin: 0 0 0 8px;
-      }
+#clock.date {
+    margin: 0 0 0 8px;
+}
 
-      #custom-status-checker {
-	margin: 0 0 0 -100px;
-	font-stretch: ultra-condensed;
-      }
-    	
-      #workspaces button.urgent, #idle_inhibitor.activated, #custom-pa-mute.muted, #custom-camera-blank.blank {
-        background-color: @secondary;
-        color: @third;
-      }
-    	
-      #custom-pa-mute.muted, #custom-camera-blank.blank {
-        background-color: @grey;
-      }
+#custom-status-checker {
+    margin: 0 0 0 -100px;
+    font-stretch: ultra-condensed;
+}
+
+#workspaces button.urgent, #idle_inhibitor.activated, #custom-pa-mute.muted, #custom-camera-blank.blank {
+    background-color: @third;
+    color: @secondary;
+}
+
+#custom-pa-mute.muted, #custom-camera-blank.blank {
+    background-color: @grey;
+}
     
-      #workspaces button:hover {
-        background-image: none; /* remove Adwaita button gradient */
-        background-color: @primary;
-      }
-    	
-      #workspaces button:hover label {
-        text-shadow: none; 
-      }
-    	
-      #workspaces button.active {
-        background-color: @secondary;
-        color: @background;
-      }
-    	
+#workspaces button:hover {
+    background-image: none; /* remove Adwaita button gradient */
+    background-color: @primary;
+}
+
+#workspaces button:hover label {
+    text-shadow: none;
+}
+
+#workspaces button.active {
+    background-color: @secondary;
+    color: @background;
+}
+
 #workspaces button.active:hover {
     opacity: 0.8;
 }
-    	
+
 #workspaces button:active, #workspaces button.focused:active {
     background-color: @foreground;
 }
