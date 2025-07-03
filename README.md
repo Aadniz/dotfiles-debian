@@ -56,6 +56,8 @@ Installed packages with apt
 | grim                | Grab images from a Wayland compositor                                   | 2025-06-29 |
 | wl-clipboard        | Nice tool to copy something to clipboard on wayland WMs                 | 2025-06-29 |
 | cmake               | Used for C and C++                                                      | 2025-06-30 |
+| meson               | Build automation tool                                                   | 2025-06-30 |
+| cpio                | Tool to create, extract, or copy files to and from archives             | 2025-06-30 |
 | libgl1-mesa-dev     | Free implementation of the OpenGL API                                   | 2025-06-30 |
 | swaylock            | Application to lock the desktop                                         | 2025-06-30 |
 | spotify-client      | Spotify streaming music client                                          | 2025-06-30 |
@@ -64,6 +66,13 @@ Installed packages with apt
 | python3-venv        | This is for `python3 -m venv .venv`                                     | 2025-06-30 |
 | fonts-firacode      | I like this font                                                        | 2025-06-30 |
 | waydroid            | Android emulator                                                        | 2025-07-01 |
+| tor                 | Anonymous proxy                                                         | 2025-07-02 |
+| lz4                 | To handle lz4 compressed files                                          | 2025-07-02 |
+| qutebrowser         | Browse the web with vim shortcuts                                       | 2025-07-03 |
+| bsdmainutils        | Calendar related stuff                                                  | 2025-07-03 |
+| fontforge           | Handy tool to manipulate open fonts                                     | 2025-07-03 |
+| fancontrol          | Was supposed to help control the fan on the PC                          | 2025-07-03 |
+| thermald            | Was also supposed to help control the fan on the PC                     | 2025-07-03 |
 <!--END_APT_PACKAGES-->
 
 ### Source packages
@@ -74,7 +83,6 @@ All the packages installed from source (or not found in apt)
 | Name                   | Link                                                     | Last Updated |
 |------------------------|----------------------------------------------------------|--------------|
 | anki-25.02.7-linux-qt6 | -                                                        | 2025-05-15   |
-| Signal                 | -                                                        | 2025-06-28   |
 | pinnacle               | [Source link](https://github.com/pinnacle-comp/pinnacle) | 2025-06-28   |
 | termdown               | [Source link](https://github.com/trehn/termdown)         | 2025-06-28   |
 | hyprsome               | [Source link](https://github.com/Aadniz/hyprsome)        | 2025-06-29   |
@@ -82,4 +90,6 @@ All the packages installed from source (or not found in apt)
 | spotify-adblock        | [Source link](https://github.com/abba23/spotify-adblock) | 2025-06-30   |
 | Jetbrains              | -                                                        | 2025-06-30   |
 | Element-Nightly        | -                                                        | 2025-07-01   |
+| Bruno                  | -                                                        | 2025-07-03   |
+| Signal                 | -                                                        | 2025-07-03   |
 <!--END_SOURCE_PACKAGES-->
