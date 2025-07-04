@@ -1,0 +1,23 @@
+background-color=#191b22
+progress-color=over #7d98ecFF
+border-size=0
+width=400
+height=300
+padding=16
+#margin=60,30
+default-timeout=7000
+font=Monospace 12
+layer=overlay
+sort=+time
+max-visible=6
+text-color=#ffffff
+
+[urgency=high]
+border-color=#e1746d
+border-size=3
+default-timeout=0
+
+[urgency=critical]
+border-color=#e1746d
+border-size=3
+default-timeout=0

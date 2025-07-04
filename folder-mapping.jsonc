@@ -17,8 +17,8 @@
     "wofi": "~/.config/wofi",
     "hypr": "~/.config/hypr",
     "waybar": "~/.config/waybar",
+    "mako": "~/.config/mako",
     "kitty": "~/.config/kitty",
-    "dunst": "~/.config/dunst",
     "pinnacle": "~/.config/pinnacle"
   }
 }

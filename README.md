@@ -73,6 +73,7 @@ Installed packages with apt
 | fontforge           | Handy tool to manipulate open fonts                                     | 2025-07-03 |
 | fancontrol          | Was supposed to help control the fan on the PC                          | 2025-07-03 |
 | thermald            | Was also supposed to help control the fan on the PC                     | 2025-07-03 |
+| mako-notifier       | -                                                                       | 2025-07-04 |
 <!--END_APT_PACKAGES-->
 
 ### Source packages
