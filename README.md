@@ -11,6 +11,8 @@ Coming from a declarative OS, it is very desirable to keep the system somewhat t
 
 Installed packages with apt
 
+<details><summary><b>List of all APT packages</b></summary>
+
 <!--BEGIN_APT_PACKAGES-->
 | Package             | Description                                                             | Installed  |
 |---------------------|-------------------------------------------------------------------------|------------|
@@ -73,12 +75,23 @@ Installed packages with apt
 | fontforge           | Handy tool to manipulate open fonts                                     | 2025-07-03 |
 | fancontrol          | Was supposed to help control the fan on the PC                          | 2025-07-03 |
 | thermald            | Was also supposed to help control the fan on the PC                     | 2025-07-03 |
-| mako-notifier       | -                                                                       | 2025-07-04 |
+| mako-notifier       | Notification daemon for wayland                                         | 2025-07-04 |
+| libssl-dev          | Various rust applications depend on this                                | 2025-07-04 |
+| wireguard           | Wireguard VPN                                                           | 2025-07-05 |
+| resolvconf          | Needed by Wireguard                                                     | 2025-07-05 |
+| xxd                 | Hex dump visualizer                                                     | 2025-07-05 |
+| stress              | Stress tester                                                           | 2025-07-05 |
+| lm-sensors          | Figuring out the hardware info on the PC                                | 2025-07-05 |
+| nodejs              | Guess you can't be a dev without this package                           | 2025-07-05 |
 <!--END_APT_PACKAGES-->
+
+</details>
 
 ### Source packages
 
 All the packages installed from source (or not found in apt)
+
+<details><summary><b>List of all applications built from source</b></summary>
 
 <!--BEGIN_SOURCE_PACKAGES-->
 | Name                   | Link                                                     | Last Updated |
@@ -89,8 +102,11 @@ All the packages installed from source (or not found in apt)
 | hyprsome               | [Source link](https://github.com/Aadniz/hyprsome)        | 2025-06-29   |
 | Hyprshot               | [Source link](https://github.com/Gustash/Hyprshot)       | 2025-06-29   |
 | spotify-adblock        | [Source link](https://github.com/abba23/spotify-adblock) | 2025-06-30   |
-| Jetbrains              | -                                                        | 2025-06-30   |
 | Element-Nightly        | -                                                        | 2025-07-01   |
 | Bruno                  | -                                                        | 2025-07-03   |
 | Signal                 | -                                                        | 2025-07-03   |
+| Jetbrains              | -                                                        | 2025-07-04   |
+| motus                  | -                                                        | 2025-07-05   |
 <!--END_SOURCE_PACKAGES-->
+
+</details>
