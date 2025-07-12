@@ -83,6 +83,12 @@ Installed packages with apt
 | stress              | Stress tester                                                           | 2025-07-05 |
 | lm-sensors          | Figuring out the hardware info on the PC                                | 2025-07-05 |
 | nodejs              | Guess you can't be a dev without this package                           | 2025-07-05 |
+| ffmpeg              | Useful application for converting video and images                      | 2025-07-07 |
+| fonts-font-awesome  | Nice icon fonts                                                         | 2025-07-07 |
+| libplayerctl-dev    | Mediaplayer controls for hyprland controls                              | 2025-07-07 |
+| brightnessctl       | Brightness control for hyprland controls                                | 2025-07-09 |
+| prettyping          | Ping hostname or ip in a pretty visualized way                          | 2025-07-10 |
+| refind              | Fancy and customizable multiboot selector                               | 2025-07-11 |
 <!--END_APT_PACKAGES-->
 
 </details>
