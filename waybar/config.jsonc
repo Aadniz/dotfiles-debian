@@ -7,13 +7,14 @@
     "spacing": 4, // Gaps between modules (4px)
     // Choose the order of the modules
     "modules-left": [
-        "hyprland/workspaces",
-        "custom/media"
+        "hyprland/workspaces"
     ],
     "modules-right": [
+        "custom/media",
         "custom/cpu",
-        "memory",
+        "custom/memory",
         "pulseaudio",
+        "battery",
         "tray",
         "clock#date",
         "custom/kanji-day",
@@ -28,7 +29,7 @@
             "3": "三",
             "4": "四",
             "5": "五",
-            "6": "六",     
+            "6": "六",
             "7": "七",
             "8": "八",
             "9": "九",
@@ -149,13 +150,18 @@
         "interval": 1
     },
     "custom/cpu": {
-        "format": "{} ",
+        "format": " {}",
+        "min-length": 8,
+        "align": 1,
+        "justify": "right",
         "exec": "~/.config/waybar/cpu_usage.sh",
-        "tooltip": true,
         "interval": 1
     },
-    "memory": {
-        "format": "{}% "
+    "custom/memory": {
+        "format": " {}",
+        "exec": "~/.config/waybar/memory.sh",
+        "min-length": 8,
+        "interval": 20
     },
     "temperature": {
         // "thermal-zone": 2,
@@ -176,10 +182,10 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "{capacity}% {icon}",
-        "format-full": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
-        "format-plugged": "{capacity}% ",
+        "format": "{icon} {capacity}%",
+        "format-full": "{icon} {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
         "format-alt": "{time} {icon}",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
