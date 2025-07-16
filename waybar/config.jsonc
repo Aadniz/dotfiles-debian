@@ -7,6 +7,7 @@
     "spacing": 4, // Gaps between modules (4px)
     // Choose the order of the modules
     "modules-left": [
+        "niri/workspaces",
         "hyprland/workspaces"
     ],
     "modules-right": [
@@ -21,6 +22,30 @@
         "clock#time",
     ],
     // Modules configuration
+    "niri/workspaces": {
+        "format": "{name} {icon}",
+        "format-icons": {
+            "1": "一",
+            "2": "二",
+            "3": "三",
+            "4": "四",
+            "5": "五",
+            "6": "六",
+            "7": "七",
+            "8": "八",
+            "9": "九",
+            "10": "十",
+        },
+        "persistent-workspaces": {
+          "*": 10  // 10 workspaces per monitor
+        },
+        "on-scroll-up": "niri msg action focus-workspace-up",
+        "on-scroll-down": "niri msg action focus-workspace-down",
+        //"enable-bar-scroll": true
+    },
+    "niri/window": {
+        "separate-outputs": true
+    },
     "hyprland/workspaces": {
         "format": "{icon}",
         "format-icons": {

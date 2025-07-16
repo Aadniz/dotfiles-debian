@@ -89,6 +89,18 @@ Installed packages with apt
 | brightnessctl       | Brightness control for hyprland controls                                | 2025-07-09 |
 | prettyping          | Ping hostname or ip in a pretty visualized way                          | 2025-07-10 |
 | refind              | Fancy and customizable multiboot selector                               | 2025-07-11 |
+| texlive             | Used to compile LaTeX to PDF                                            | 2025-07-14 |
+| texlive-full        | Used to compile LaTeX to PDF                                            | 2025-07-14 |
+| elisa               | Music player supporting FLAC                                            | 2025-07-14 |
+| sass                | SCSS compiler                                                           | 2025-07-14 |
+| chromium            | Web browser made by Google                                              | 2025-07-15 |
+| libgtk-4-dev        | Needed to compile Niri                                                  | 2025-07-16 |
+| libgtk-3-dev        | Needed to compile Niri                                                  | 2025-07-16 |
+| libspa-0.2-dev      | Needed to compile Niri                                                  | 2025-07-16 |
+| libpipewire-0.3-dev | Needed to compile Niri                                                  | 2025-07-16 |
+| libxcb-util-dev     | Needed to compile Niri                                                  | 2025-07-16 |
+| libxcb-cursor-dev   | Needed to compile Niri                                                  | 2025-07-16 |
+| liblz4-dev          | Needed to compile Niri                                                  | 2025-07-16 |
 <!--END_APT_PACKAGES-->
 
 </details>
@@ -100,19 +112,22 @@ All the packages installed from source (or not found in apt)
 <details><summary><b>List of all applications built from source</b></summary>
 
 <!--BEGIN_SOURCE_PACKAGES-->
-| Name                   | Link                                                     | Last Updated |
-|------------------------|----------------------------------------------------------|--------------|
-| anki-25.02.7-linux-qt6 | -                                                        | 2025-05-15   |
-| pinnacle               | [Source link](https://github.com/pinnacle-comp/pinnacle) | 2025-06-28   |
-| termdown               | [Source link](https://github.com/trehn/termdown)         | 2025-06-28   |
-| hyprsome               | [Source link](https://github.com/Aadniz/hyprsome)        | 2025-06-29   |
-| Hyprshot               | [Source link](https://github.com/Gustash/Hyprshot)       | 2025-06-29   |
-| spotify-adblock        | [Source link](https://github.com/abba23/spotify-adblock) | 2025-06-30   |
-| Element-Nightly        | -                                                        | 2025-07-01   |
-| Bruno                  | -                                                        | 2025-07-03   |
-| Signal                 | -                                                        | 2025-07-03   |
-| Jetbrains              | -                                                        | 2025-07-04   |
-| motus                  | -                                                        | 2025-07-05   |
+| Name                   | Link                                                           | Last Updated |
+|------------------------|----------------------------------------------------------------|--------------|
+| anki-25.02.7-linux-qt6 | -                                                              | 2025-05-15   |
+| pinnacle               | [Source link](https://github.com/pinnacle-comp/pinnacle)       | 2025-06-28   |
+| termdown               | [Source link](https://github.com/trehn/termdown)               | 2025-06-28   |
+| hyprsome               | [Source link](https://github.com/Aadniz/hyprsome)              | 2025-06-29   |
+| Hyprshot               | [Source link](https://github.com/Gustash/Hyprshot)             | 2025-06-29   |
+| spotify-adblock        | [Source link](https://github.com/abba23/spotify-adblock)       | 2025-06-30   |
+| Bruno                  | -                                                              | 2025-07-03   |
+| motus                  | -                                                              | 2025-07-05   |
+| Jetbrains              | -                                                              | 2025-07-14   |
+| Element-Nightly        | -                                                              | 2025-07-16   |
+| Signal                 | -                                                              | 2025-07-16   |
+| niri                   | [Source link](https://github.com/YaLTeR/niri)                  | 2025-07-16   |
+| xwayland-satellite     | [Source link](https://github.com/Supreeeme/xwayland-satellite) | 2025-07-16   |
+| swww                   | [Source link](https://github.com/LGFae/swww)                   | 2025-07-16   |
 <!--END_SOURCE_PACKAGES-->
 
 </details>

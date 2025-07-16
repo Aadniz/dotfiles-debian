@@ -19,6 +19,7 @@
     "waybar": "~/.config/waybar",
     "mako": "~/.config/mako",
     "kitty": "~/.config/kitty",
-    "pinnacle": "~/.config/pinnacle"
+    "pinnacle": "~/.config/pinnacle",
+    "niri":  "~/.config/niri"
   }
 }

@@ -2,28 +2,41 @@
 
 * {
     /* `otf-font-awesome` is required to be installed for icons */
+    font-family: "VL PGothic", "Symbols Nerd Font Mono", "FontAwesome";
 }
 
 window#waybar {
-    font-family: "Font-Awesome-6-Edited";
     font-size: 13px;
     background-color: @background;
     color: @foreground;
 }
 
-.modules-left, .modules-center, .modules-right {
-    margin-left: 8px;
-    margin-right: 8px;
-    border-radius: 16px;
-    background-color: @grey;
+.modules-left {
+    background: linear-gradient(-45deg,@background 25px,@grey 0);
+    padding-right: 35px;
+}
+.modules-center {
+    padding: 0;
+    margin: 0;
+    background: linear-gradient(-45deg,@background 25px,@grey 0);
+}
+.modules-right {
+    background: linear-gradient(45deg,@background 25px,@grey 0);
+    padding-left: 35px;
 }
 
-#workspaces, #cpu, #memory, #pulseaudio, #battery, #custom-pa-mute, #custom-camera-blank, #idle_inhibitor, #tray {
+.modules-left, .modules-center, .modules-right {
+    /*margin-left: 8px;*/
+    /*margin-right: 8px;*/
+    /*border-radius: 16px;*/
+    /*background-color: @grey;*/
+}
+
+#cpu, #memory, #pulseaudio, #battery, #custom-pa-mute, #custom-camera-blank, #idle_inhibitor, #tray {
     margin: 0 8px;
 }
 
 #workspaces {
-    margin-left: 0;
 }
 
 #workspaces button, #idle_inhibitor, #custom-pa-mute, #custom-camera-blank {
@@ -31,7 +44,7 @@ window#waybar {
     background-color: transparent;
     color: @foreground;
     box-shadow: none;
-    border-radius: 16px;
+    /*border-radius: 16px;*/
     transition: background-color 100ms ease, color 100ms ease;
     min-width: 32px;
     min-height: 32px;
@@ -47,15 +60,15 @@ window#waybar {
     margin: 0 2px;
     background-color: @secondary;
     color: @background;
-    border-radius: 16px;
+    /*border-radius: 16px;*/
 }
 #clock.date {
     margin: 0 0 0 8px;
 }
 
 #custom-status-checker {
-    margin: 0 0 0 -100px;
     font-stretch: ultra-condensed;
+    font-size: 20px;
 }
 
 #workspaces button.urgent, #idle_inhibitor.activated, #custom-pa-mute.muted, #custom-camera-blank.blank {
