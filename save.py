@@ -43,10 +43,20 @@ for (dotfile_folder, system_folder) in folders.items():
         print(f"Warning: Source path {from_folder} does not exist, skipping")
         continue
 
-    shutil.copytree(from_folder, to_folder, dirs_exist_ok=True, ignore=lambda p, f: set(
-        f for f in os.listdir(p)
-        if utils.should_ignore(os.path.join(p, f), ignore_patterns)
-    ))
+    try:
+        shutil.copytree(
+            from_folder,
+            to_folder,
+            dirs_exist_ok=True,
+            ignore=lambda p, f: set(
+                f for f in os.listdir(p)
+                if utils.should_ignore(os.path.join(p, f), ignore_patterns)
+            )
+        )
+    except shutil.Error as e:
+        for (src, dst, error_msg) in e.args[0]:
+            print(f"WARNING: {error_msg}")
+        continue
 
 
 # Updating README.md apt application list
