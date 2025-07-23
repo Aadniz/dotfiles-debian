@@ -20,6 +20,7 @@
     "mako": "~/.config/mako",
     "kitty": "~/.config/kitty",
     "pinnacle": "~/.config/pinnacle",
-    "niri":  "~/.config/niri"
+    "niri":  "~/.config/niri",
+    "doom": "~/.config/doom"
   }
 }
