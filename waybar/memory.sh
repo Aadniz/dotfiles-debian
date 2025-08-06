@@ -20,8 +20,8 @@ PERCENT="${PERCENT:-true}"
 LABEL="${LABEL:-}"
 ICON_COLOR="${PRIMARY_COLOR}"
 HIGH_COLOR="#FF0000"
-MED_COLOR="${SECONDARY_COLOR}"
-DEFAULT_COLOR="${FOREGROUND_COLOR}"
+MED_COLOR="#FFBBBB"
+DEFAULT_COLOR="#FFFFFF"
 
 awk -v type=$TYPE -v high_color=$HIGH_COLOR -v med_color=$MED_COLOR -v default_color=$DEFAULT_COLOR -v icon_color=$ICON_COLOR -v label=$LABEL -v percent=$PERCENT '
 /^MemTotal:/ {
@@ -71,7 +71,7 @@ END {
 	if (percent == "true" ) {
 		#printf("%.1fG/%.1fG (%.f%%)\n", used, total, pct)
         #printf("%.1fG/%.1fG\n", used, total)
-        printf("%.1fG\n", used)
+        printf("<span color=\"%s\">%.1fG</span>\n", color, used)
 	} else {
 		#printf("%.1fG/%.1fG\n", used, total)
 	}

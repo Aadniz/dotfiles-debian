@@ -7,8 +7,8 @@ cpu_usage=-1
 threads=1
 decimals="${DECIMALS:-0}"
 label="${LABEL:-}"
-color_normal="${FOREGROUND_COLOR}"
-color_warn="${SECONDARY_COLOR}"
+color_normal="#FFFFFF"
+color_warn="#FFBBBB"
 color_crit="#FF0000"
 icon_color="${PRIMARY_COLOR}"
 color="$color_normal"
@@ -41,6 +41,6 @@ elif [[ cpu_usage -ge t_warn ]]; then
 fi
 
 # Print short_text, full_text
-printf "%.${decimals}f%%${spacer}\n" "$cpu_usage"
+printf "<span color=\"${color}\">%.${decimals}f%%${spacer}</span>\n" "$cpu_usage"
 
 exit 0

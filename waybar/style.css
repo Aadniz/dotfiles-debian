@@ -2,7 +2,7 @@
 
 * {
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: "VL PGothic", "Symbols Nerd Font Mono", "FontAwesome";
+    font-family: "Arimo Nerd Font";
 }
 
 window#waybar {
@@ -12,16 +12,16 @@ window#waybar {
 }
 
 .modules-left {
-    background: linear-gradient(-45deg,@background 25px,@grey 0);
+    background-color: @background;
     padding-right: 35px;
 }
 .modules-center {
     padding: 0;
     margin: 0;
-    background: linear-gradient(-45deg,@background 25px,@grey 0);
+    background-color: @background;
 }
 .modules-right {
-    background: linear-gradient(45deg,@background 25px,@grey 0);
+    background-color: @background;
     padding-left: 35px;
 }
 
@@ -32,7 +32,7 @@ window#waybar {
     /*background-color: @grey;*/
 }
 
-#cpu, #memory, #pulseaudio, #battery, #custom-pa-mute, #custom-camera-blank, #idle_inhibitor, #tray {
+#cpu, #memory, #pulseaudio, #battery, #custom-pa-mute, #custom-camera-blank, #idle_inhibitor, #tray, #custom-status-checker {
     margin: 0 8px;
 }
 
@@ -50,25 +50,23 @@ window#waybar {
     min-height: 32px;
     padding: 0;
     font-weight: normal;
+    border-radius: 0;
 }
 
 #clock.time {
-    margin: 0 8px 0 0;
+    margin: 0 14px 0 0;
 }
 #custom-kanji-day {
-    padding: 8px;
-    margin: 0 2px;
-    background-color: @secondary;
-    color: @background;
+    margin: 0;
+    color: @primary;
     /*border-radius: 16px;*/
 }
 #clock.date {
-    margin: 0 0 0 8px;
+    margin: 0 0 0 4px;
 }
 
 #custom-status-checker {
     font-stretch: ultra-condensed;
-    font-size: 20px;
 }
 
 #workspaces button.urgent, #idle_inhibitor.activated, #custom-pa-mute.muted, #custom-camera-blank.blank {
@@ -81,8 +79,8 @@ window#waybar {
 }
     
 #workspaces button:hover {
-    background-image: none; /* remove Adwaita button gradient */
-    background-color: @primary;
+    color: @secondary;
+    background-color: transparent;
 }
 
 #workspaces button:hover label {
@@ -90,19 +88,9 @@ window#waybar {
 }
 
 #workspaces button.active {
-    background-color: @secondary;
-    color: @background;
-}
-
-#workspaces button.active:hover {
-    opacity: 0.8;
-}
-
-#workspaces button:active, #workspaces button.focused:active {
-    background-color: @foreground;
+    color: @primary;
 }
 
 #workspaces button.empty {
-    color: @foreground;
     opacity: 0.5;
 }

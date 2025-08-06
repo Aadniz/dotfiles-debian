@@ -2,7 +2,7 @@
 {
     // "layer": "top", // Waybar at top layer
     // "position": "bottom", // Waybar position (top|bottom|left|right)
-    "height": 30, // Waybar height (to be removed for auto height)
+    // "height": 40, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
     "spacing": 4, // Gaps between modules (4px)
     // Choose the order of the modules
@@ -10,8 +10,11 @@
         "niri/workspaces",
         "hyprland/workspaces"
     ],
+    //"modules-center": [
+    //],
     "modules-right": [
         "custom/media",
+        "custom/status-checker",
         "custom/cpu",
         "custom/memory",
         "pulseaudio",
@@ -23,19 +26,19 @@
     ],
     // Modules configuration
     "niri/workspaces": {
-        "format": "{name} {icon}",
-        "format-icons": {
-            "1": "一",
-            "2": "二",
-            "3": "三",
-            "4": "四",
-            "5": "五",
-            "6": "六",
-            "7": "七",
-            "8": "八",
-            "9": "九",
-            "10": "十",
-        },
+        "format": "{icon}",
+        //"format-icons": {
+        //    "1": "一",
+        //    "2": "二",
+        //    "3": "三",
+        //    "4": "四",
+        //    "5": "五",
+        //    "6": "六",
+        //    "7": "七",
+        //    "8": "八",
+        //    "9": "九",
+        //    "10": "十",
+        //},
         "persistent-workspaces": {
           "*": 10  // 10 workspaces per monitor
         },
@@ -175,7 +178,7 @@
         "interval": 1
     },
     "custom/cpu": {
-        "format": " {}",
+        "format": "<span color='#7d98ec'></span> {}",
         "min-length": 8,
         "align": 1,
         "justify": "right",
@@ -183,10 +186,15 @@
         "interval": 1
     },
     "custom/memory": {
-        "format": " {}",
+        "format": "<span color='#7d98ec'></span> {}",
         "exec": "~/.config/waybar/memory.sh",
         "min-length": 8,
         "interval": 20
+    },
+    "custom/status-checker": {
+        "format": "{}",
+        "exec": "~/.config/waybar/status-script.py",
+        "interval": 10
     },
     "temperature": {
         // "thermal-zone": 2,
@@ -207,10 +215,10 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "{icon} {capacity}%",
-        "format-full": "{icon} {capacity}%",
-        "format-charging": " {capacity}%",
-        "format-plugged": " {capacity}%",
+        "format": "<span color='#7d98ec'>{icon}</span> {capacity}%",
+        "format-full": "",
+        "format-charging": "<span color='#7d98ec'></span> {capacity}%",
+        "format-plugged": "<span color='#7d98ec'></span> {capacity}%",
         "format-alt": "{time} {icon}",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
@@ -241,10 +249,10 @@
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon} {format_source}",
+        "format": "{volume}% <span color='#7d98ec'>{icon}</span> {format_source}",
         "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
+        "format-bluetooth-muted": "󰖁 {icon} {format_source}",
+        "format-muted": "󰖁 {format_source}",
         //"format-source": "{volume}% ",
         //"format-source-muted": "",
         "format-icons": {
@@ -259,9 +267,8 @@
         "on-click": "pavucontrol"
     },
     "custom/media": {
-        "format": "{icon} {text}",
+        "format": "<span color='#7d98ec'>{icon}</span> {text}",
         "return-type": "json",
-        "max-length": 40,
         "format-icons": {
             "spotify": "",
             "default": "🎜"
