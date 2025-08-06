@@ -305,13 +305,29 @@ layout {
 // This line starts waybar, a commonly used bar for Wayland compositors.
 spawn-at-startup "xwayland-satellite"
 environment {
+    // Try our best to force wayland
     DISPLAY ":0"
     ELECTRON_OZONE_PLATFORM_HINT "auto"
     ANKI_WAYLAND "1"
+    // All locale stuff
+    LC_ADDRESS "de_DE.UTF-8"
+    LC_IDENTIFICATION "de_DE.UTF-8"
+    LC_MEASUREMENT "de_DE.UTF-8"
+    LC_MONETARY "de_DE.UTF-8"
+    LC_NAME "de_DE.UTF-8"
+    LC_NUMERIC "en_US.UTF-8"
+    LC_PAPER "de_DE.UTF-8"
+    LC_TELEPHONE "de_DE.UTF-8"
+    LC_TIME "ja_JP.UTF-8"
+    // Japanese keyboard layout
+    QT_IM_MODULE "fcitx5"
+    GTK_IM_MODULE "fcitx5"
+    XMODIFIERS "@im=fcitx5"
 }
 spawn-at-startup "waybar"
 spawn-at-startup "mako"
-spawn-at-startup "background.sh" "/home/chiya/Pictures/Anime/ff/98972477_p0_edited.jpg"
+spawn-at-startup "fcitx5" "-d" "--replace"
+spawn-at-startup "~/.config/niri/background.sh" "/home/chiya/Pictures/Anime/ff/98972477_p0_edited.jpg"
 layer-rule {
     match namespace="wp-back"
     place-within-backdrop true
@@ -346,6 +362,13 @@ hotkey-overlay {
 // This option will also fix border/focus ring drawing behind some semitransparent windows.
 // After enabling or disabling this, you need to restart the apps for this to take effect.
 // prefer-no-csd
+
+gestures {
+  hot-corners {
+    top-left
+    top-right
+  }
+}
 
 // You can change the path where screenshots are saved.
 // A ~ at the front will be expanded to the home directory.
@@ -397,6 +420,7 @@ window-rule {
     match app-id="Anki"
     match app-id="anki"
     match app-id="floating-kitty"
+    match app-id="virt-manager"
 
     default-window-height { fixed 900; }
     default-column-width { fixed 1200; }
