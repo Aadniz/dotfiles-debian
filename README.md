@@ -128,6 +128,21 @@ Installed packages with apt
 | linux-headers-6.12.38+deb13-amd64 | Needed to compile C driver (now unused)                                 | 2025-08-06 |
 | zoxide                            | Jump fast between folders                                               | 2025-08-06 |
 | fzf                               | Fuzzy finder tool                                                       | 2025-08-06 |
+| python3-tk                        | -                                                                       | 2025-08-10 |
+| php-cli                           | -                                                                       | 2025-08-23 |
+| php8.4                            | -                                                                       | 2025-08-23 |
+| php-pgsql                         | -                                                                       | 2025-08-23 |
+| transmission-gtk                  | -                                                                       | 2025-08-23 |
+| deluge-gtk                        | -                                                                       | 2025-08-23 |
+| libtorrent-dev                    | -                                                                       | 2025-08-23 |
+| python3-libtorrent                | -                                                                       | 2025-08-23 |
+| v4l2loopback-dkms                 | Loopback video capture                                                  | 2025-09-03 |
+| net-tools                         | Includes stuff like netstat                                             | 2025-09-03 |
+| xdg-desktop-portal-gnome          | Gnome's implementation of screensharing on wayland                      | 2025-09-04 |
+| xdg-desktop-portal                | Used for screensharing on wayland                                       | 2025-09-04 |
+| gnome                             | The gnome desktop environment                                           | 2025-09-04 |
+| ftp                               | cli tool for connecting to FTP servers                                  | 2025-09-15 |
+| default-jdk                       | JAVA SDK/JDK                                                            | 2025-09-27 |
 <!--END_APT_PACKAGES-->
 
 </details>
@@ -146,20 +161,21 @@ All the packages installed from source (or not found in apt)
 | hyprsome            | [Source link](https://github.com/Aadniz/hyprsome)                | 2025-06-29   |
 | Hyprshot            | [Source link](https://github.com/Gustash/Hyprshot)               | 2025-06-29   |
 | spotify-adblock     | [Source link](https://github.com/abba23/spotify-adblock)         | 2025-06-30   |
-| Bruno               | -                                                                | 2025-07-03   |
 | motus               | -                                                                | 2025-07-05   |
 | xwayland-satellite  | [Source link](https://github.com/Supreeeme/xwayland-satellite)   | 2025-07-16   |
 | swww                | [Source link](https://github.com/LGFae/swww)                     | 2025-07-16   |
 | anki                | -                                                                | 2025-07-17   |
 | torbrowser-launcher | [Source link](https://github.com/torproject/torbrowser-launcher) | 2025-07-19   |
-| Element-Nightly     | -                                                                | 2025-08-02   |
-| Signal              | -                                                                | 2025-08-02   |
 | nvim-linux-x86_64   | -                                                                | 2025-08-02   |
-| niri                | [Source link](https://github.com/YaLTeR/niri)                    | 2025-08-04   |
 | hydroxide           | [Source link](https://github.com/emersion/hydroxide)             | 2025-08-05   |
-| tor-browser         | -                                                                | 2025-08-06   |
-| Jetbrains           | -                                                                | 2025-08-06   |
 | haveno              | [Source link](https://github.com/haveno-dex/haveno)              | 2025-08-06   |
+| Bruno               | -                                                                | 2025-08-26   |
+| teamviewer          | -                                                                | 2025-08-27   |
+| niri                | [Source link](https://github.com/YaLTeR/niri)                    | 2025-09-22   |
+| tor-browser         | -                                                                | 2025-09-23   |
+| Element-Nightly     | -                                                                | 2025-09-25   |
+| Signal              | -                                                                | 2025-09-25   |
+| Jetbrains           | -                                                                | 2025-09-27   |
 <!--END_SOURCE_PACKAGES-->
 
 </details>
