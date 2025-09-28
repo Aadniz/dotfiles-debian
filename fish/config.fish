@@ -3,4 +3,4 @@ if status is-interactive
 end
 
 source "$HOME/.cargo/env.fish"
-zoxide init fish | source
+zoxide init --cmd cd fish | source

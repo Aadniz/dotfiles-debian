@@ -65,7 +65,7 @@ input {
     }
 
     tablet {
-        map-to-output "DP-3"
+        map-to-output "PNP(AOC) AG271QG #ASM0HnQVlo3d"
     }
 
     // Uncomment this to make the mouse warp to the center of newly focused windows.
@@ -82,7 +82,7 @@ input {
 // Find more information on the wiki:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Outputs
 // Remember to uncomment the node by removing "/-"!
-output "HDMI-A-1" {
+output "ASUSTek COMPUTER INC VG27A M1LMQS007922" {
     // Uncomment this line to disable this output.
     // off
 
@@ -113,16 +113,20 @@ output "HDMI-A-1" {
     position x=0 y=0
 }
 
-output "DP-3" {
+output "PNP(AOC) AG271QG #ASM0HnQVlo3d" {
     position x=2560 y=0
     mode "2560x1440@165.000"
     focus-at-startup
 }
 
-output "eDP-1" {
+output "Samsung Display Corp. 0x4171 Unknown" {
     position x=5120 y=720
     mode "2880x1800@90.001"
     scale 2
+}
+
+output "winit" {
+    scale 1
 }
 
 overview {
@@ -321,10 +325,9 @@ environment {
     LC_TIME "ja_JP.UTF-8"
     // Japanese keyboard layout
     QT_IM_MODULE "fcitx5"
-    GTK_IM_MODULE "fcitx5"
     XMODIFIERS "@im=fcitx5"
 }
-spawn-at-startup "waybar"
+// spawn-at-startup "waybar"
 spawn-at-startup "mako"
 spawn-at-startup "fcitx5" "-d" "--replace"
 spawn-at-startup "~/.config/niri/background.sh" "/home/chiya/Pictures/Anime/ff/98972477_p0_edited.jpg"
@@ -404,26 +407,39 @@ window-rule {
 }
 
 window-rule {
+    match app-id="Element-Nightly"
     match app-id="Waydroid"
-    match app-id="thunderbird"
+    match app-id="discord"
     match app-id="firefox-esr"
     match app-id="krita"
+    match app-id="Spotify"
+    match app-id="signal"
+    match app-id="spotify"
+    match app-id="thunderbird"
     open-maximized true
 }
 
 window-rule {
+    match app-id="Emacs"
+}
+
+window-rule {
+    match app-id="Anki"
+    match app-id="anki"
+    match app-id="TeamViewer"
+    match app-id="copilot-kiosk"
+    match app-id="floating-kitty"
+    match app-id="haveno.desktop.app.HavenoApp"
     match app-id="org.gnome.Loupe"
     match app-id="org.gnome.Nautilus"
+    match app-id="soffice"
+    match app-id="virt-manager"
     match app-id=r#"^firefox-esr$"# title=r#"^Developer Tools.*"#
     match app-id=r#"^thunderbird$"# title=r#"^New Event:$"#
     match app-id=r#"firefox$"# title="^Picture-in-Picture$"
-    match app-id="Anki"
-    match app-id="anki"
-    match app-id="floating-kitty"
-    match app-id="virt-manager"
 
     default-window-height { fixed 900; }
-    default-column-width { fixed 1200; }
+    default-column-width { fixed 1250; }
     open-floating true
 }
 
