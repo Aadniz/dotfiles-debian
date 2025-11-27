@@ -17,10 +17,13 @@
     "wofi": "~/.config/wofi",
     "hypr": "~/.config/hypr",
     "waybar": "~/.config/waybar",
+    "sway": "~/.config/sway",
     "mako": "~/.config/mako",
     "kitty": "~/.config/kitty",
     "pinnacle": "~/.config/pinnacle",
     "niri":  "~/.config/niri",
-    "doom": "~/.config/doom"
+    "doom": "~/.config/doom",
+    "foot": "~/.config/foot",
+    "i3blocks": "~/.config/i3blocks"
   }
 }

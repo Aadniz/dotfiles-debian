@@ -1,16 +1,16 @@
-background-color=#191b22
-progress-color=over #7d98ecFF
+background-color=#c4e3ffFF
+progress-color=over #191b22
 border-size=0
 width=400
 height=300
 padding=16
 #margin=60,30
 default-timeout=7000
-font=Monospace 12
+font=Monospace 10
 layer=overlay
 sort=+time
 max-visible=6
-text-color=#ffffff
+text-color=#191b22
 
 [urgency=high]
 border-color=#e1746d

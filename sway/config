@@ -1,0 +1,372 @@
+# Default config for sway
+#
+# Copy this to ~/.config/sway/config and edit it to your liking.
+#
+# Read `man 5 sway` for a complete reference.
+
+### Variables
+#
+# Logo key. Use Mod1 for Alt.
+set $mod Mod4
+# Home row direction keys, like vim
+set $left h
+set $down j
+set $up k
+set $right l
+# Your preferred terminal emulator
+set $term foot
+# Your preferred application launcher
+set $menu wofi --show run
+
+include /etc/sway/config-vars.d/*
+
+font pongo:Iosevka Normal 11, Arimo Nerd Font Normal 11
+
+focus_on_window_activation smart
+hide_edge_borders none
+smart_borders on
+output * background /home/chiya/Pictures/Anime/ff/98972477_p0_edited.jpg fill
+
+### Output configuration
+#
+# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
+# This is commented in Debian, because the Sway wallpaper files are in a separate
+# package `sway-backgrounds`. Installing this package drops a config file to
+# /etc/sway/config.d/
+# output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+#
+# Example configuration:
+#
+#   output HDMI-A-1 resolution 1920x1080 position 1920,0
+#
+# You can get the names of your outputs by running: swaymsg -t get_outputs
+
+### Idle configuration
+#
+# Example configuration:
+#
+# exec swayidle -w \
+#          timeout 300 'swaylock -f -c 000000' \
+#          timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+#          before-sleep 'swaylock -f -c 000000'
+#
+# This will lock your screen after 300 seconds of inactivity, then turn off
+# your displays after another 300 seconds, and turn your screens back on when
+# resumed. It will also lock your screen before your computer goes to sleep.
+
+### Input configuration
+#
+# Example configuration:
+#
+#   input type:touchpad {
+#       dwt enabled
+#       tap enabled
+#       natural_scroll enabled
+#       middle_emulation enabled
+#   }
+#
+#   input type:keyboard {
+#       xkb_layout "eu"
+#   }
+#
+# You can also configure each device individually.
+# Read `man 5 sway-input` for more information about this section.
+
+input type:touchpad {
+    dwt enabled
+    tap enabled
+    natural_scroll enabled
+    middle_emulation enabled
+}
+
+input type:keyboard {
+    xkb_layout us
+    xkb_variant altgr-intl
+    xkb_numlock enabled
+    repeat_delay 160
+    repeat_rate 60
+}
+input 5426:123:Razer_Razer_Viper_Ultimate_Dongle {
+    dwt enabled
+    accel_profile flat
+    pointer_accel -0.1
+}
+input 5426:122:Razer_Razer_Viper_Ultimate {
+    dwt enabled
+    accel_profile flat
+    pointer_accel -0.1
+}
+
+
+### Key bindings
+#
+# Basics:
+#
+    # Start a terminal
+    bindsym $mod+Return exec $term
+    bindsym $mod+Ctrl+Return exec $term -a floatingFoot
+
+    # Kill focused window
+    bindsym $mod+Escape kill
+
+# Start your launcher
+    bindsym $mod+q exec $menu
+
+    # Drag floating windows by holding down $mod and left mouse button.
+    # Resize them with right mouse button + $mod.
+    # Despite the name, also works for non-floating windows.
+    # Change normal to inverse to use left mouse button for resizing and right
+    # mouse button for dragging.
+    floating_modifier $mod normal
+
+    # Reload the configuration file
+    bindsym $mod+Shift+c reload
+
+    # Exit sway (logs you out of your Wayland session)
+    bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+#
+# Moving around:
+#
+    # Move your focus around
+    bindsym $mod+$left focus left
+    bindsym $mod+$down focus down
+    bindsym $mod+$up focus up
+    bindsym $mod+$right focus right
+    # Or use $mod+[up|down|left|right]
+    bindsym $mod+Left focus left
+    bindsym $mod+Down focus down
+    bindsym $mod+Up focus up
+    bindsym $mod+Right focus right
+
+    # Move the focused window with the same, but add Shift
+    bindsym $mod+Shift+$left move left
+    bindsym $mod+Shift+$down move down
+    bindsym $mod+Shift+$up move up
+    bindsym $mod+Shift+$right move right
+    # Ditto, with arrow keys
+    bindsym $mod+Shift+Left move left
+    bindsym $mod+Shift+Down move down
+    bindsym $mod+Shift+Up move up
+    bindsym $mod+Shift+Right move right
+
+    bindsym Alt+Tab workspace back_and_forth
+    bindsym $mod+Tab workspace next_on_output
+#
+# Workspaces:
+#
+    # Switch to workspace
+    bindsym $mod+1 workspace number 1
+    bindsym $mod+2 workspace number 2
+    bindsym $mod+3 workspace number 3
+    bindsym $mod+4 workspace number 4
+    bindsym $mod+5 workspace number 5
+    bindsym $mod+6 workspace number 6
+    bindsym $mod+7 workspace number 7
+    bindsym $mod+8 workspace number 8
+    bindsym $mod+9 workspace number 9
+    bindsym $mod+0 workspace number 10
+    # Move focused container to workspace
+    bindsym $mod+Shift+1 move container to workspace number 1
+    bindsym $mod+Shift+2 move container to workspace number 2
+    bindsym $mod+Shift+3 move container to workspace number 3
+    bindsym $mod+Shift+4 move container to workspace number 4
+    bindsym $mod+Shift+5 move container to workspace number 5
+    bindsym $mod+Shift+6 move container to workspace number 6
+    bindsym $mod+Shift+7 move container to workspace number 7
+    bindsym $mod+Shift+8 move container to workspace number 8
+    bindsym $mod+Shift+9 move container to workspace number 9
+    bindsym $mod+Shift+0 move container to workspace number 10
+    # Note: workspaces can have any name you want, not just numbers.
+    # We just use 1-10 as the default.
+#
+# Layout stuff:
+#
+    # You can "split" the current object of your focus with
+    # $mod+b or $mod+v, for horizontal and vertical splits
+    # respectively.
+    bindsym $mod+v splith
+    bindsym $mod+c splitv
+
+    # Switch the current container between different layout styles
+    bindsym $mod+s layout stacking
+    bindsym $mod+t layout tabbed
+    bindsym $mod+e layout toggle split
+
+    # Make the current focus fullscreen
+    bindsym $mod+f fullscreen
+
+    # Toggle the current focus between tiling and floating mode
+    bindsym $mod+space floating toggle
+
+    # Swap focus between the tiling area and the floating area
+    bindsym $mod+d focus mode_toggle
+
+    # Move focus to the parent container
+    bindsym $mod+a focus parent
+#
+# Rules:
+#
+
+for_window [app_id="floatingFoot"] floating enable, resize set 1270 px 700 px, border pixel
+for_window [app_id=".arandr-wrapped"] floating enable
+for_window [app_id=".virt-manager-wrapped"] floating enable
+for_window [app_id="Waydroid"] floating enable
+for_window [app_id="com.obsproject.Studio"] floating enable
+for_window [app_id="deluge"] floating enable
+for_window [app_id="electrum"] floating enable
+for_window [app_id="file-roller"] floating enable
+for_window [app_id="lutris"] floating enable
+for_window [app_id="nemo"] floating enable
+for_window [app_id="org.getmonero.monero-wallet-gui"] floating enable
+for_window [app_id="org.gnome.Nautilus"] floating enable
+for_window [app_id="org.kde.ark"] floating enable
+for_window [app_id="org.kde.dolphin"] floating enable
+for_window [app_id="org.kde.gwenview"] floating enable
+for_window [app_id="radeon-profile"] floating enable
+for_window [app_id="subl"] floating enable
+for_window [app_id="transmission-gtk"] floating enable
+for_window [app_id="xdg-desktop-portal"] floating enable
+for_window [app_id="xdg-desktop-portal-gtk"] floating enable
+for_window [app_id="zenity"] floating enable
+for_window [class="Insomnia"] floating enable
+for_window [class="Mario spel"] floating enable
+for_window [class="Matplotlib"] floating enable
+for_window [class="Qemu-system-i386"] floating enable
+for_window [class="Vlc"] floating enable
+for_window [class="Week 39"] floating enable
+for_window [class="bruno"] floating enable
+for_window [class="code-oss"] floating enable
+for_window [class="obs"] floating enable
+for_window [class="steam"] floating enable
+for_window [class="vlc"] floating enable
+for_window [class="zoom"] floating enable
+for_window [instance="Godot_ProjectList"] floating enable
+for_window [instance="Toolkit"] floating enable
+for_window [instance="copilot.microsoft.com"] floating enable
+for_window [instance="x.com__i_grok"] floating enable
+for_window [title="Developer Tools —"] floating enable
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="toolbox"] floating enable
+for_window [title="(?:Open|Save) (?:w+ )?(?:File|Folder|As)"] floating enable, resize set width 800 height 600
+for_window [instance="copilot.microsoft.com"] move scratchpad, resize set 1200 px 1300 px, border pixel, scratchpad show
+for_window [instance="x.com__i_grok"] move scratchpad, resize set 1200 px 1300 px, border pixel, scratchpad show
+for_window [app_id="anki"] floating enable, resize set 1400 px 1000 px
+for_window [app_id="floatingKitty"] floating enable, resize set 1270 px 700 px, border pixel
+for_window [app_id="kitty-sway-launcher-desktop"] floating enable, resize set 1270 px 700 px, border pixel
+for_window [app_id="mpv"] floating enable, border pixel
+for_window [class="feh"] floating enable, border pixel
+for_window [app_id="nemo"] move scratchpad, resize set 1270 px 700 px, border pixel, scratchpad show
+for_window [app_id="kitty"] border pixel
+for_window [app_id="discord"] border pixel
+for_window [app_id="Element"] border pixel
+
+#
+# Scratchpad:
+#
+    # Sway has a "scratchpad", which is a bag of holding for windows.
+    # You can send windows there and get them back later.
+
+    # Move the currently focused window to the scratchpad
+    bindsym $mod+Shift+z move scratchpad
+
+    # Show the next scratchpad window or hide the focused scratchpad window.
+    # If there are multiple scratchpad windows, this command cycles through them.
+    bindsym $mod+z scratchpad show
+#
+# Resizing containers:
+#
+bindsym $mod+Alt+$left resize shrink width 5px
+bindsym $mod+Alt+$down resize grow height 5px
+bindsym $mod+Alt+$up resize shrink height 5px
+bindsym $mod+Alt+$right resize grow width 5px
+bindsym $mod+Alt+Left resize shrink width 5px
+bindsym $mod+Alt+Down resize grow height 5px
+bindsym $mod+Alt+Up resize shrink height 5px
+bindsym $mod+Alt+Right resize grow width 5px
+
+mode "resize" {
+    # left will shrink the containers width
+    # right will grow the containers width
+    # up will shrink the containers height
+    # down will grow the containers height
+    bindsym $left resize shrink width 5px
+    bindsym $down resize grow height 5px
+    bindsym $up resize shrink height 5px
+    bindsym $right resize grow width 5px
+
+    # Ditto, with arrow keys
+    bindsym Left resize shrink width 5px
+    bindsym Down resize grow height 5px
+    bindsym Up resize shrink height 5px
+    bindsym Right resize grow width 5px
+
+    # Return to default mode
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+r mode "resize"
+#
+# Utilities:
+#
+    # Special keys to adjust volume via PulseAudio
+    bindsym --locked XF86AudioMute exec wpctl set-mute \@DEFAULT_AUDIO_SINK@ toggle
+    bindsym --locked XF86AudioLowerVolume exec wpctl set-volume \@DEFAULT_AUDIO_SINK@ 2%-
+    bindsym --locked XF86AudioRaiseVolume exec wpctl set-volume -l 1 \@DEFAULT_AUDIO_SINK@ 2%+
+    bindsym --locked XF86AudioMicMute exec wpctl set-mute \@DEFAULT_AUDIO_SOURCE@ toggle
+    # Special keys to adjust brightness via brightnessctl
+    bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
+    bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
+
+#
+# Screenshot:
+#
+    bindsym Ctrl+Print exec wl-copy < $(grimshot --notify save output "$HOME/Pictures/Shutter/Screenshot_$(date +%Y-%m-%d_%H:%M:%S).png")
+    bindsym Ctrl+Shift+Print exec grimshot --notify copy output
+    bindsym Mod1+Print exec wl-copy < $(grimshot --notify save active "$HOME/Pictures/Shutter/Screenshot_$(date +%Y-%m-%d_%H:%M:%S).png")
+    bindsym Mod4+Print exec wl-copy < $(grimshot --notify save screen "$HOME/Pictures/Shutter/Screenshot_$(date +%Y-%m-%d_%H:%M:%S).png")
+    bindsym Print exec wl-copy < $(grimshot save area "$HOME/Pictures/Shutter/Screenshot_$(date +%Y-%m-%d_%H:%M:%S).png")
+    bindsym Shift+Print exec grimshot --notify copy area
+
+#
+# Theme:
+#
+#                       Handle border  Handle bg  fg       split color  Border    
+client.focused          #7d98ec        #191b22    #cccccc  #c4e3ff      #7d98ec
+client.focused_inactive #041520        #191b22    #a0a0a0  #041520      #041520
+client.unfocused        #041520        #191b22    #a0a0a0  #041520      #041520
+client.urgent           #9b0000        #cc7573    #041520  #9b0000      #041520
+client.placeholder      #ff0000        #0c0c0c    #ffffff  #ff0000      #0c0c0c
+client.background       #ffffff
+
+#
+# Status Bar:
+#
+# Read `man 5 sway-bar` for more information about this section.
+bar {
+    position top
+
+    # When the status_command prints a new line to stdout, swaybar updates.
+    # The default just shows the current date and time.
+    status_command i3blocks -c ~/.config/i3blocks/i3blocks.conf
+    #status_command while echo '月火水木金土日' | cut -c $(( $(date +%u)*3-2 ))-$(( $(date +%u)*3 )); do sleep 1; done
+
+    colors {
+        statusline #ffffff
+        background #111111
+        separator #A3895C
+        inactive_workspace #32323200 #32323200 #5c5c5c
+        focused_workspace #7d98ec #7d98ec #041520
+        active_workspace #7d98ec #7d98ec #041520
+        inactive_workspace #191b22 #191b22 #e3e5d8
+        urgent_workspace #CC7573 #CC7573 #041520
+    }
+}
+
+bindsym --whole-window {
+  Mod4+button4 gaps inner current plus 5
+  Mod4+button5 gaps inner current minus 5
+}
+
+exec mako
+
+include /etc/sway/config.d/*

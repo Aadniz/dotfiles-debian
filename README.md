@@ -143,6 +143,31 @@ Installed packages with apt
 | gnome                             | The gnome desktop environment                                           | 2025-09-04 |
 | ftp                               | cli tool for connecting to FTP servers                                  | 2025-09-15 |
 | default-jdk                       | JAVA SDK/JDK                                                            | 2025-09-27 |
+| nethogs                           | Monitor network traffic                                                 | 2025-09-28 |
+| maven                             | Package manager for java                                                | 2025-09-28 |
+| sqlite3                           | Need to do some SQL sometimes                                           | 2025-10-08 |
+| feh                               | Nice image viewer                                                       | 2025-10-10 |
+| dnsutils                          | DNS tools                                                               | 2025-10-10 |
+| proxychains                       | General proxy wrapper                                                   | 2025-10-11 |
+| remmina                           | Remote desktop app                                                      | 2025-10-12 |
+| traceroute                        | Gotta trace the route                                                   | 2025-10-12 |
+| cmatrix                           | Clubbed to death                                                        | 2025-10-13 |
+| python3-pip                       | Native pip package                                                      | 2025-10-13 |
+| pavucontrol                       | A volume control for the PulseAudio sound server                        | 2025-10-24 |
+| code                              | VSCode                                                                  | 2025-10-26 |
+| shellcheck                        | Used to check bash scripts                                              | 2025-11-06 |
+| dotnet-sdk-9.0                    | Used to compile Retoswap                                                | 2025-11-14 |
+| mono-xbuild                       | Used to compile Retoswap                                                | 2025-11-14 |
+| android-sdk                       | Used to compile Retoswap                                                | 2025-11-14 |
+| dotnet-sdk-10.0                   | Used to compile Retoswap                                                | 2025-11-14 |
+| dotnet-sdk-8.0                    | Used to compile Retoswap                                                | 2025-11-14 |
+| php-xdebug                        | Used to debug PHP code                                                  | 2025-11-17 |
+| liblua5.4-dev                     | Used to configure Pinnacle with Lua                                     | 2025-11-25 |
+| lua-http                          | Used to configure Pinnacle with Lua                                     | 2025-11-25 |
+| i3blocks                          | Fancy bar for sway                                                      | 2025-11-26 |
+| grimshot                          | Used for screenshotting                                                 | 2025-11-27 |
+| alacritty                         | XLP told me to install it                                               | 2025-11-27 |
+| tty-clock                         | Nice clock                                                              | 2025-11-27 |
 <!--END_APT_PACKAGES-->
 
 </details>
@@ -156,7 +181,6 @@ All the packages installed from source (or not found in apt)
 <!--BEGIN_SOURCE_PACKAGES-->
 | Name                | Link                                                             | Last Updated |
 |---------------------|------------------------------------------------------------------|--------------|
-| pinnacle            | [Source link](https://github.com/pinnacle-comp/pinnacle)         | 2025-06-28   |
 | termdown            | [Source link](https://github.com/trehn/termdown)                 | 2025-06-28   |
 | hyprsome            | [Source link](https://github.com/Aadniz/hyprsome)                | 2025-06-29   |
 | Hyprshot            | [Source link](https://github.com/Gustash/Hyprshot)               | 2025-06-29   |
@@ -168,14 +192,16 @@ All the packages installed from source (or not found in apt)
 | torbrowser-launcher | [Source link](https://github.com/torproject/torbrowser-launcher) | 2025-07-19   |
 | nvim-linux-x86_64   | -                                                                | 2025-08-02   |
 | hydroxide           | [Source link](https://github.com/emersion/hydroxide)             | 2025-08-05   |
-| haveno              | [Source link](https://github.com/haveno-dex/haveno)              | 2025-08-06   |
 | Bruno               | -                                                                | 2025-08-26   |
 | teamviewer          | -                                                                | 2025-08-27   |
-| niri                | [Source link](https://github.com/YaLTeR/niri)                    | 2025-09-22   |
-| tor-browser         | -                                                                | 2025-09-23   |
-| Element-Nightly     | -                                                                | 2025-09-25   |
-| Signal              | -                                                                | 2025-09-25   |
-| Jetbrains           | -                                                                | 2025-09-27   |
+| anki-git            | [Source link](https://github.com/ankitects/anki)                 | 2025-09-28   |
+| haveno              | [Source link](https://github.com/haveno-dex/haveno)              | 2025-10-02   |
+| Jetbrains           | -                                                                | 2025-11-14   |
+| niri                | [Source link](https://github.com/YaLTeR/niri)                    | 2025-11-15   |
+| Element-Nightly     | -                                                                | 2025-11-25   |
+| Signal              | -                                                                | 2025-11-25   |
+| pinnacle            | [Source link](https://github.com/pinnacle-comp/pinnacle)         | 2025-11-25   |
+| tor-browser         | -                                                                | 2025-11-27   |
 <!--END_SOURCE_PACKAGES-->
 
 </details>

@@ -12,7 +12,7 @@
 # The command Pinnacle will run on startup and when you reload your config.
 # Paths are relative to the directory this file is in.
 # This must be an array.
-run = ["cargo", "run"]
+run = ["lua5.4", "default_config.lua"]
 
 ### Socket directory ###
 # Pinnacle will open a Unix socket at `$XDG_RUNTIME_DIR` by default, falling back to `/tmp` if it doesn't exist.
