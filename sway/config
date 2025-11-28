@@ -41,15 +41,31 @@ output * background /home/chiya/Pictures/Anime/ff/98972477_p0_edited.jpg fill
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 
-### Idle configuration
-#
-# Example configuration:
-#
-# exec swayidle -w \
-#          timeout 300 'swaylock -f -c 000000' \
-#          timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-#          before-sleep 'swaylock -f -c 000000'
-#
+# Main monitor
+output "Samsung Display Corp. 0x4171 Unknown" {
+  mode 2880x1800@90.001Hz
+  position 0 720
+  scale 2
+}
+# Right monitor
+output "AOC AG271QG #ASM0HnQVlo3d" {
+  mode 2560x1440@165.000Hz
+  position 1440 0
+}
+# Middle monitor
+output "ASUSTek COMPUTER INC VG27A M1LMQS007922" {
+  mode 2560x1440@144.006Hz
+  position 4000 0
+}
+
+### Idle and locking configuration
+exec swayidle -w \
+         timeout 300 'swaylock -f -c 000000 --line-color 191b22 --ring-color 191b22 --key-hl-color 7d98ec --inside-color 000000' \
+         timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+         before-sleep 'swaylock -f -c 000000 --line-color 191b22 --ring-color 191b22 --key-hl-color 7d98ec --inside-color 000000'
+
+bindsym $mod+Backspace exec swaylock -f -c 000000 --line-color 191b22 --ring-color 191b22 --key-hl-color 7d98ec --inside-color 000000
+
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
@@ -210,7 +226,7 @@ input 5426:122:Razer_Razer_Viper_Ultimate {
 for_window [app_id="floatingFoot"] floating enable, resize set 1270 px 700 px, border pixel
 for_window [app_id=".arandr-wrapped"] floating enable
 for_window [app_id=".virt-manager-wrapped"] floating enable
-for_window [app_id="Waydroid"] floating enable
+#for_window [app_id="Waydroid"] floating enable
 for_window [app_id="com.obsproject.Studio"] floating enable
 for_window [app_id="deluge"] floating enable
 for_window [app_id="electrum"] floating enable
@@ -369,4 +385,5 @@ bindsym --whole-window {
 
 exec mako
 
+include ~/.config/sway/config.d/*.conf
 include /etc/sway/config.d/*

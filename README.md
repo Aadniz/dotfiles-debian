@@ -202,6 +202,7 @@ All the packages installed from source (or not found in apt)
 | Signal              | -                                                                | 2025-11-25   |
 | pinnacle            | [Source link](https://github.com/pinnacle-comp/pinnacle)         | 2025-11-25   |
 | tor-browser         | -                                                                | 2025-11-27   |
+| swaysome            | [Source link](https://gitlab.com/hyask/swaysome)                 | 2025-11-28   |
 <!--END_SOURCE_PACKAGES-->
 
 </details>
