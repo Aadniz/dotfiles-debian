@@ -1,0 +1,44 @@
+#!/usr/bin/env bash
+
+VOL_HIGH_ICON=""
+VOL_HIGH_TRESH=70
+VOL_MEDIUM_ICON=""
+VOL_MEDIUM_TRESH=30
+VOL_LOW_ICON=""
+VOL_NONE_ICON=""
+
+AUDIO_HIGHEST_THRESH=90
+AUDIO_HIGHEST_COLOR="#FF0000"
+ICON_COLOR="${PRIMARY_COLOR:-#7d98ec}"
+MUTED_COLOR="${THIRD_COLOR:-#6c757d}"
+MUTED_ICON=""
+
+wpctl_output=$(wpctl get-volume "@DEFAULT_AUDIO_SINK@")
+
+if ( echo $wpctl_output | grep -qi muted ); then
+  echo "<span color=\"$MUTED_COLOR\">$MUTED_ICON</span> muted"
+  echo $MUTED_ICON
+  echo $MUTED_COLOR
+else
+  vol=$(echo $wpctl_output | cut -d " " -f 2 | awk '{printf "%d\n", $1 * 100}')
+  if [ $vol -ge $VOL_HIGH_TRESH ]; then
+    icon=$VOL_HIGH_ICON
+  elif [ $vol -ge $VOL_MEDIUM_TRESH ]; then
+    icon=$VOL_MEDIUM_ICON
+  elif [ $vol -gt 0 ]; then
+    icon=$VOL_LOW_ICON
+  else
+    icon=$VOL_NONE_ICON
+  fi
+  
+  if [ $vol -ge $AUDIO_HIGHEST_THRESH ]; then
+    echo "<span color=\"$AUDIO_HIGHEST_COLOR\">$icon</span> $vol%"
+    echo $vol%
+    echo $AUDIO_HIGHEST_COLOR
+  else
+    text_color=""
+    echo "<span color=\"$ICON_COLOR\">$icon</span> $vol%"
+    echo $vol%
+    echo ""
+  fi
+fi
