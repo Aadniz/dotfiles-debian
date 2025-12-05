@@ -20,7 +20,7 @@ set $menu wofi --show run
 
 include /etc/sway/config-vars.d/*
 
-font pongo:Iosevka Normal 11, Arimo Nerd Font Normal 11
+font pongo:Iosevka Normal 11, Font Awesome 6 Pro 11, Arimo Nerd Font Normal 11
 
 focus_on_window_activation smart
 hide_edge_borders none
@@ -259,7 +259,7 @@ for_window [class="vlc"] floating enable
 for_window [class="zoom"] floating enable
 for_window [instance="Godot_ProjectList"] floating enable
 for_window [instance="Toolkit"] floating enable
-for_window [instance="copilot.microsoft.com"] floating enable
+for_window [app_id="chrome-copilot.microsoft.com__-Default"] floating enable
 for_window [instance="x.com__i_grok"] floating enable
 for_window [title="Developer Tools —"] floating enable
 for_window [window_role="pop-up"] floating enable
@@ -267,11 +267,13 @@ for_window [window_role="toolbox"] floating enable
 for_window [title="(?:Open|Save) (?:w+ )?(?:File|Folder|As)"] floating enable, resize set width 800 height 600
 for_window [instance="copilot.microsoft.com"] move scratchpad, resize set 1200 px 1300 px, border pixel, scratchpad show
 for_window [instance="x.com__i_grok"] move scratchpad, resize set 1200 px 1300 px, border pixel, scratchpad show
-for_window [app_id="anki"] floating enable, resize set 1400 px 1000 px
+for_window [class="Anki"] floating enable, resize set 1400 px 1000 px
+for_window [class="haveno.desktop.app.HavenoApp"] floating enable
 for_window [app_id="floatingKitty"] floating enable, resize set 1270 px 700 px, border pixel
 for_window [app_id="kitty-sway-launcher-desktop"] floating enable, resize set 1270 px 700 px, border pixel
 for_window [app_id="mpv"] floating enable, border pixel
 for_window [class="feh"] floating enable, border pixel
+for_window [app_id="org.gnome.Loupe"] floating enable, resize set 1400 px 1000 px, border pixel
 for_window [app_id="nemo"] move scratchpad, resize set 1270 px 700 px, border pixel, scratchpad show
 for_window [app_id="kitty"] border pixel
 for_window [app_id="discord"] border pixel
@@ -348,13 +350,15 @@ bindsym $mod+r mode "resize"
     bindsym Print exec wl-copy < $(grimshot save area "$HOME/Pictures/Shutter/Screenshot_$(date +%Y-%m-%d_%H:%M:%S).png")
     bindsym Shift+Print exec grimshot --notify copy area
 
+    bindsym $mod+Bar exec color-picker
+
 #
 # Theme:
 #
 #                       Handle border  Handle bg  fg       split color  Border    
 client.focused          #7d98ec        #191b22    #cccccc  #c4e3ff      #7d98ec
-client.focused_inactive #041520        #191b22    #a0a0a0  #041520      #041520
-client.unfocused        #041520        #191b22    #a0a0a0  #041520      #041520
+client.focused_inactive #202936        #191b22    #a0a0a0  #041520      #041520
+client.unfocused        #202936        #15161a    #606060  #041520      #041520
 client.urgent           #9b0000        #cc7573    #041520  #9b0000      #041520
 client.placeholder      #ff0000        #0c0c0c    #ffffff  #ff0000      #0c0c0c
 client.background       #ffffff
@@ -370,6 +374,7 @@ bar {
     # The default just shows the current date and time.
     status_command i3blocks -c ~/.config/i3blocks/i3blocks.conf
     #status_command while echo '月火水木金土日' | cut -c $(( $(date +%u)*3-2 ))-$(( $(date +%u)*3 )); do sleep 1; done
+    font pongo:Font Awesome 6 Pro Solid, Arimo Nerd Font Normal 11
 
     colors {
         statusline #ffffff
@@ -389,6 +394,7 @@ bindsym --whole-window {
 }
 
 exec mako
+exec fcitx5 -d --replace
 
 include ~/.config/sway/config.d/*.conf
 include /etc/sway/config.d/*
