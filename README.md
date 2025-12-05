@@ -173,6 +173,7 @@ Installed packages with apt
 | alacritty                         | XLP told me to install it                                               | 2025-11-27 |
 | tty-clock                         | Nice clock                                                              | 2025-11-27 |
 | swaysome                          | 10 workspaces per monitor hack for sway                                 | 2025-11-30 |
+| autoconf                          | Used for compiling Ladybird browser                                     | 2025-12-03 |
 <!--END_APT_PACKAGES-->
 
 </details>
@@ -203,10 +204,13 @@ All the packages installed from source (or not found in apt)
 | haveno              | [Source link](https://github.com/haveno-dex/haveno)              | 2025-10-02   |
 | Jetbrains           | -                                                                | 2025-11-14   |
 | niri                | [Source link](https://github.com/YaLTeR/niri)                    | 2025-11-15   |
-| Element-Nightly     | -                                                                | 2025-11-25   |
-| Signal              | -                                                                | 2025-11-25   |
 | pinnacle            | [Source link](https://github.com/pinnacle-comp/pinnacle)         | 2025-11-25   |
-| tor-browser         | -                                                                | 2025-11-27   |
+| pfetch-rs           | [Source link](https://github.com/Gobidev/pfetch-rs)              | 2025-11-30   |
+| Element-Nightly     | -                                                                | 2025-12-02   |
+| Signal              | -                                                                | 2025-12-02   |
+| treemd              | [Source link](https://github.com/Epistates/treemd)               | 2025-12-03   |
+| ladybird            | [Source link](https://github.com/LadybirdBrowser/ladybird)       | 2025-12-03   |
+| tor-browser         | -                                                                | 2025-12-03   |
 <!--END_SOURCE_PACKAGES-->
 
 </details>
