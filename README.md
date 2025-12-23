@@ -174,6 +174,17 @@ Installed packages with apt
 | tty-clock                         | Nice clock                                                              | 2025-11-27 |
 | swaysome                          | 10 workspaces per monitor hack for sway                                 | 2025-11-30 |
 | autoconf                          | Used for compiling Ladybird browser                                     | 2025-12-03 |
+| libasound2-dev                    | Used for compiling of Ladybird browser                                  | 2025-12-05 |
+| swayidle                          | Automatically detect when sway is at idle                               | 2025-12-05 |
+| nginx                             | Used to run PHP and test 4get                                           | 2025-12-08 |
+| libsqlite3-dev                    | Used to test 4get                                                       | 2025-12-11 |
+| libgd-dev                         | Used to test 4get                                                       | 2025-12-11 |
+| outline-client                    | -                                                                       | 2025-12-12 |
+| libsfml-dev                       | Used to compile self-made game                                          | 2025-12-12 |
+| php-dev                           | Used to bind rust libraries to PHP                                      | 2025-12-14 |
+| clang                             | Used by some rust applications                                          | 2025-12-14 |
+| libclang-dev                      | Used by some rust applications                                          | 2025-12-14 |
+| openvpn                           | Used to test VPN services that support OpenVPN                          | 2025-12-16 |
 <!--END_APT_PACKAGES-->
 
 </details>
@@ -185,32 +196,36 @@ All the packages installed from source (or not found in apt)
 <details><summary><b>List of all applications built from source</b></summary>
 
 <!--BEGIN_SOURCE_PACKAGES-->
-| Name                | Link                                                             | Last Updated |
-|---------------------|------------------------------------------------------------------|--------------|
-| termdown            | [Source link](https://github.com/trehn/termdown)                 | 2025-06-28   |
-| hyprsome            | [Source link](https://github.com/Aadniz/hyprsome)                | 2025-06-29   |
-| Hyprshot            | [Source link](https://github.com/Gustash/Hyprshot)               | 2025-06-29   |
-| spotify-adblock     | [Source link](https://github.com/abba23/spotify-adblock)         | 2025-06-30   |
-| motus               | -                                                                | 2025-07-05   |
-| xwayland-satellite  | [Source link](https://github.com/Supreeeme/xwayland-satellite)   | 2025-07-16   |
-| swww                | [Source link](https://github.com/LGFae/swww)                     | 2025-07-16   |
-| anki                | -                                                                | 2025-07-17   |
-| torbrowser-launcher | [Source link](https://github.com/torproject/torbrowser-launcher) | 2025-07-19   |
-| nvim-linux-x86_64   | -                                                                | 2025-08-02   |
-| hydroxide           | [Source link](https://github.com/emersion/hydroxide)             | 2025-08-05   |
-| Bruno               | -                                                                | 2025-08-26   |
-| teamviewer          | -                                                                | 2025-08-27   |
-| anki-git            | [Source link](https://github.com/ankitects/anki)                 | 2025-09-28   |
-| haveno              | [Source link](https://github.com/haveno-dex/haveno)              | 2025-10-02   |
-| Jetbrains           | -                                                                | 2025-11-14   |
-| niri                | [Source link](https://github.com/YaLTeR/niri)                    | 2025-11-15   |
-| pinnacle            | [Source link](https://github.com/pinnacle-comp/pinnacle)         | 2025-11-25   |
-| pfetch-rs           | [Source link](https://github.com/Gobidev/pfetch-rs)              | 2025-11-30   |
-| Element-Nightly     | -                                                                | 2025-12-02   |
-| Signal              | -                                                                | 2025-12-02   |
-| treemd              | [Source link](https://github.com/Epistates/treemd)               | 2025-12-03   |
-| ladybird            | [Source link](https://github.com/LadybirdBrowser/ladybird)       | 2025-12-03   |
-| tor-browser         | -                                                                | 2025-12-03   |
+| Name                 | Link                                                              | Last Updated |
+|----------------------|-------------------------------------------------------------------|--------------|
+| termdown             | [Source link](https://github.com/trehn/termdown)                  | 2025-06-28   |
+| hyprsome             | [Source link](https://github.com/Aadniz/hyprsome)                 | 2025-06-29   |
+| Hyprshot             | [Source link](https://github.com/Gustash/Hyprshot)                | 2025-06-29   |
+| spotify-adblock      | [Source link](https://github.com/abba23/spotify-adblock)          | 2025-06-30   |
+| motus                | -                                                                 | 2025-07-05   |
+| xwayland-satellite   | [Source link](https://github.com/Supreeeme/xwayland-satellite)    | 2025-07-16   |
+| swww                 | [Source link](https://github.com/LGFae/swww)                      | 2025-07-16   |
+| anki                 | -                                                                 | 2025-07-17   |
+| torbrowser-launcher  | [Source link](https://github.com/torproject/torbrowser-launcher)  | 2025-07-19   |
+| nvim-linux-x86_64    | -                                                                 | 2025-08-02   |
+| hydroxide            | [Source link](https://github.com/emersion/hydroxide)              | 2025-08-05   |
+| Bruno                | -                                                                 | 2025-08-26   |
+| teamviewer           | -                                                                 | 2025-08-27   |
+| anki-git             | [Source link](https://github.com/ankitects/anki)                  | 2025-09-28   |
+| haveno               | [Source link](https://github.com/haveno-dex/haveno)               | 2025-10-02   |
+| Jetbrains            | -                                                                 | 2025-11-14   |
+| niri                 | [Source link](https://github.com/YaLTeR/niri)                     | 2025-11-15   |
+| pinnacle             | [Source link](https://github.com/pinnacle-comp/pinnacle)          | 2025-11-25   |
+| pfetch-rs            | [Source link](https://github.com/Gobidev/pfetch-rs)               | 2025-11-30   |
+| treemd               | [Source link](https://github.com/Epistates/treemd)                | 2025-12-03   |
+| ladybird             | [Source link](https://github.com/LadybirdBrowser/ladybird)        | 2025-12-03   |
+| gtt                  | [Source link](https://github.com/eeeXun/gtt)                      | 2025-12-05   |
+| SwayAudioIdleInhibit | [Source link](https://github.com/ErikReider/SwayAudioIdleInhibit) | 2025-12-05   |
+| kotofetch            | [Source link](https://github.com/hxpe-dev/kotofetch)              | 2025-12-06   |
+| Outline              | -                                                                 | 2025-12-12   |
+| Element-Nightly      | -                                                                 | 2025-12-13   |
+| Signal               | -                                                                 | 2025-12-13   |
+| tor-browser          | -                                                                 | 2025-12-21   |
 <!--END_SOURCE_PACKAGES-->
 
 </details>

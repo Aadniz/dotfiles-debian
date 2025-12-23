@@ -59,10 +59,11 @@ output "ASUSTek COMPUTER INC VG27A M1LMQS007922" {
 }
 
 ### Idle and locking configuration
-exec swayidle -w \
-         timeout 300 'swaylock -f -c 000000 --line-color 191b22 --ring-color 191b22 --key-hl-color 7d98ec --inside-color 000000' \
-         timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-         before-sleep 'swaylock -f -c 000000 --line-color 191b22 --ring-color 191b22 --key-hl-color 7d98ec --inside-color 000000'
+#exec swayidle -w \
+#         timeout 300 'swaylock -f -c 000000 --line-color 191b22 --ring-color 191b22 --key-hl-color 7d98ec --inside-color 000000' \
+#         timeout 600 'swaymsg "output * power off"' \
+#              resume 'swaymsg "output * power on"' \
+#         before-sleep 'swaylock -f -c 000000 --line-color 191b22 --ring-color 191b22 --key-hl-color 7d98ec --inside-color 000000'
 
 bindsym $mod+Backspace exec swaylock -f -c 000000 --line-color 191b22 --ring-color 191b22 --key-hl-color 7d98ec --inside-color 000000
 
@@ -121,6 +122,7 @@ input 5426:122:Razer_Razer_Viper_Ultimate {
     # Start a terminal
     bindsym $mod+Return exec $term
     bindsym $mod+Ctrl+Return exec $term -a floatingFoot
+    bindsym $mod+Alt+Return exec $term -a floatingMicroFoot
 
     # Kill focused window
     bindsym $mod+Escape kill
@@ -140,6 +142,7 @@ input 5426:122:Razer_Razer_Viper_Ultimate {
 
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+
 #
 # Moving around:
 #
@@ -225,6 +228,7 @@ input 5426:122:Razer_Razer_Viper_Ultimate {
 #
 
 for_window [app_id="floatingFoot"] floating enable, resize set 1270 px 700 px, border pixel
+for_window [app_id="floatingMicroFoot"] floating enable, resize set 200 px 83 px, border pixel
 for_window [app_id=".arandr-wrapped"] floating enable
 for_window [app_id=".virt-manager-wrapped"] floating enable
 #for_window [app_id="Waydroid"] floating enable
@@ -351,6 +355,20 @@ bindsym $mod+r mode "resize"
     bindsym Shift+Print exec grimshot --notify copy area
 
     bindsym $mod+Bar exec color-picker
+
+#
+# Applications
+#
+    bindsym $mod+Alt+a exec anki
+    bindsym $mod+Alt+e exec nautilus
+    bindsym $mod+Alt+w exec firefox
+    bindsym $mod+Alt+t exec $term -a floatingFoot gtt
+    bindsym $mod+Alt+m exec thunderbird
+    bindsym $mod+Alt+d exec discord
+    bindsym $mod+Alt+c exec element-desktop-nightly
+    bindsym $mod+Alt+b exec tor-browser
+    bindsym $mod+Alt+n exec emacs
+    bindsym $mod+Alt+s exec spotify-adblock
 
 #
 # Theme:
