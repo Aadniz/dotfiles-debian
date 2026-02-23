@@ -5,7 +5,7 @@ import fnmatch
 from pathlib import Path
 
 from utils import config as config_utils
-from utils import readme
+from utils.readme import Readme
 from utils import utils
 
 SCRIPT_DIR = os.path.dirname(os.path.realpath(__file__))
@@ -58,11 +58,14 @@ for (dotfile_folder, system_folder) in folders.items():
             print(f"WARNING: {error_msg}")
         continue
 
+readme = Readme(README_FILE)
 
 # Updating README.md apt application list
+unfound_packages = readme.get_unfound_apt_packages()
+readme.update_apt_packages(unfound_packages)
 apt_applications = utils.get_apt_applications()
-readme.update_apt_packages(apt_applications, README_FILE)
+readme.update_apt_packages(apt_applications)
 
 # Updating README.md source application list
 source_applications = utils.get_source_applications(source_application_paths)
-readme.update_source_packages(source_applications, README_FILE)
+readme.update_source_packages(source_applications)
