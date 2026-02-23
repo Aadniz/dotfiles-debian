@@ -20,7 +20,6 @@ Installed packages with apt
 <!--BEGIN_APT_PACKAGES-->
 | Package                   | Description                                                             | Installed  |
 |---------------------------|-------------------------------------------------------------------------|------------|
-| kitty                     | Fast-ish terminal, can display images. Have always used this Terminal   | 2025-06-28 |
 | element-nightly           | Element: the future of secure communication (nightly unstable build)    | 2025-06-28 |
 | git                       | Git version history/control                                             | 2025-06-28 |
 | signal-desktop            | Private messaging from your desktop                                     | 2025-06-28 |
@@ -29,9 +28,7 @@ Installed packages with apt
 | pkg-config                | Needed for some Rust stuff                                              | 2025-06-28 |
 | libxkbcommon-dev          | Needed for compiling Pinnacle WM                                        | 2025-06-28 |
 | libudev-dev               | Needed for compiling Pinnacle WM                                        | 2025-06-28 |
-| libdisplay-info-dev       | Needed for compiling Pinnacle WM                                        | 2025-06-28 |
 | libgbm-dev                | Needed for compiling Pinnacle WM                                        | 2025-06-28 |
-| luarocks                  | Needed for configuring Pinnacle config                                  | 2025-06-28 |
 | emacs                     | Text editor, alternative to VIM                                         | 2025-06-28 |
 | libnotify-bin             | Notify application                                                      | 2025-06-28 |
 | sway                      | Sway WM, useful when needing some handy Wayland tools and apps          | 2025-06-28 |
@@ -40,9 +37,7 @@ Installed packages with apt
 | qalc                      | Fancy calculator that supports tons and tons of SI units                | 2025-06-29 |
 | arandr                    | Useful tool to visualize multi-monitor setup                            | 2025-06-29 |
 | wofi                      | Alternative to rofi, an application launcher tool                       | 2025-06-29 |
-| rofi                      | Application launcher tool, choose what you like I guess                 | 2025-06-29 |
 | obs-studio                | OBS for video recording                                                 | 2025-06-29 |
-| hyprland                  | Hyprland, fancy trendy WM with animations and stuff                     | 2025-06-29 |
 | dunst                     | A customizable and lightweight notification-daemon                      | 2025-06-29 |
 | btop                      | Fancy top TUI application                                               | 2025-06-29 |
 | htop                      | Popular top TUI application                                             | 2025-06-29 |
@@ -59,9 +54,7 @@ Installed packages with apt
 | fonts-firacode            | I like this font                                                        | 2025-06-30 |
 | waydroid                  | Android emulator                                                        | 2025-07-01 |
 | tor                       | Anonymous proxy                                                         | 2025-07-02 |
-| qutebrowser               | Browse the web with vim shortcuts                                       | 2025-07-03 |
 | fontforge                 | Handy tool to manipulate open fonts                                     | 2025-07-03 |
-| thermald                  | Was also supposed to help control the fan on the PC                     | 2025-07-03 |
 | mako-notifier             | Notification daemon for wayland                                         | 2025-07-04 |
 | libssl-dev                | Various rust applications depend on this                                | 2025-07-04 |
 | wireguard                 | Wireguard VPN                                                           | 2025-07-05 |
@@ -71,15 +64,11 @@ Installed packages with apt
 | lm-sensors                | Figuring out the hardware info on the PC                                | 2025-07-05 |
 | nodejs                    | Guess you can't be a dev without this package                           | 2025-07-05 |
 | ffmpeg                    | Useful application for converting video and images                      | 2025-07-07 |
-| libplayerctl-dev          | Mediaplayer controls for hyprland controls                              | 2025-07-07 |
 | prettyping                | Ping hostname or ip in a pretty visualized way                          | 2025-07-10 |
-| texlive                   | Used to compile LaTeX to PDF                                            | 2025-07-14 |
 | elisa                     | Music player supporting FLAC                                            | 2025-07-14 |
 | chromium                  | Web browser made by Google                                              | 2025-07-15 |
 | libgtk-4-dev              | Needed to compile Niri                                                  | 2025-07-16 |
-| libspa-0.2-dev            | Needed to compile Niri                                                  | 2025-07-16 |
 | libxcb-util-dev           | Needed to compile Niri                                                  | 2025-07-16 |
-| liblz4-dev                | Needed to compile Niri                                                  | 2025-07-16 |
 | nmap                      | Scanning nearby hosts                                                   | 2025-07-18 |
 | nicotine                  | P2P music sharing application                                           | 2025-07-19 |
 | build-essential           | Needed to build Tor Browser from source                                 | 2025-07-19 |
@@ -104,7 +93,6 @@ Installed packages with apt
 | fzf                       | Fuzzy finder tool                                                       | 2025-08-06 |
 | python3-tk                | -                                                                       | 2025-08-10 |
 | php8.4                    | I'm kind of a PHP fanboy                                                | 2025-08-23 |
-| transmission-gtk          | Simple torrent application                                              | 2025-08-23 |
 | libtorrent-dev            | -                                                                       | 2025-08-23 |
 | v4l2loopback-dkms         | Loopback video capture                                                  | 2025-09-03 |
 | net-tools                 | Includes stuff like netstat                                             | 2025-09-03 |
@@ -112,27 +100,18 @@ Installed packages with apt
 | xdg-desktop-portal        | Used for screensharing on wayland                                       | 2025-09-04 |
 | gnome                     | The gnome desktop environment                                           | 2025-09-04 |
 | default-jdk               | JAVA SDK/JDK                                                            | 2025-09-27 |
-| maven                     | Package manager for java                                                | 2025-09-28 |
 | feh                       | Nice image viewer                                                       | 2025-10-10 |
-| proxychains               | General proxy wrapper                                                   | 2025-10-11 |
 | traceroute                | Gotta trace the route                                                   | 2025-10-12 |
 | cmatrix                   | Clubbed to death                                                        | 2025-10-13 |
 | python3-pip               | Native pip package                                                      | 2025-10-13 |
-| code                      | VSCode                                                                  | 2025-10-26 |
 | dotnet-sdk-9.0            | Used to compile Retoswap                                                | 2025-11-14 |
-| android-sdk               | Used to compile Retoswap                                                | 2025-11-14 |
 | dotnet-sdk-8.0            | Used to compile Retoswap                                                | 2025-11-14 |
-| liblua5.4-dev             | Used to configure Pinnacle with Lua                                     | 2025-11-25 |
 | i3blocks                  | Fancy bar for sway                                                      | 2025-11-26 |
 | grimshot                  | Used for screenshotting                                                 | 2025-11-27 |
-| tty-clock                 | Nice clock                                                              | 2025-11-27 |
 | swaysome                  | 10 workspaces per monitor hack for sway                                 | 2025-11-30 |
 | libasound2-dev            | Used for compiling of Ladybird browser                                  | 2025-12-05 |
-| nginx                     | Used to run PHP and test 4get                                           | 2025-12-08 |
 | libgd-dev                 | Used to test 4get                                                       | 2025-12-11 |
-| libsfml-dev               | Used to compile self-made game                                          | 2025-12-12 |
 | clang                     | Used by some rust applications                                          | 2025-12-14 |
-| openvpn                   | Used to test VPN services that support OpenVPN                          | 2025-12-16 |
 | foot                      | Lightweight fast terminal                                               | 2025-12-25 |
 | fastfetch                 | Since Neofetch is not available anymore                                 | 2025-12-25 |
 | python3.13-venv           | Used for creating python environments                                   | 2025-12-27 |
@@ -155,7 +134,6 @@ Installed packages with apt
 | libavformat-dev           | Needed to install Arknights Endfield launcher                           | 2026-01-22 |
 | libswscale-dev            | Needed to install Arknights Endfield launcher                           | 2026-01-22 |
 | libavdevice-dev           | Needed to install Arknights Endfield launcher                           | 2026-01-22 |
-| sass                      | Used to compile SCSS                                                    | 2026-01-27 |
 | glslang-dev               | Needed to compile monado                                                | 2026-01-31 |
 | glslang-tools             | Needed to compile monado                                                | 2026-01-31 |
 | libeigen3-dev             | Needed to compile monado                                                | 2026-01-31 |
@@ -164,9 +142,10 @@ Installed packages with apt
 | ncal                      | Calendar in the terminal                                                | 2026-02-03 |
 | ntsync-kernel-dkms        | Nice package to have to prevent Arknights Endfield from crashing by AFK | 2026-02-04 |
 | mumble                    | Open-source Teamspeak alternative                                       | 2026-02-05 |
-| transmission-qt           | Light torrent client                                                    | 2026-02-11 |
+| transmission-qt           | Light torrent client (QT)                                               | 2026-02-11 |
 | bruno                     | REST API application                                                    | 2026-02-20 |
-| qbittorrent               | -                                                                       | 2026-02-21 |
+| transmission-gtk          | Light torrent client (GTK)                                              | 2026-01-04 |
+| sass                      | Used to compile SCSS                                                    | 2026-01-27 |
 <!--END_APT_PACKAGES-->
 
 </details>
