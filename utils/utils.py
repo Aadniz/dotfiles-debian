@@ -98,6 +98,32 @@ def _get_sorted_history_files(log_dir: Path) -> List[Path]:
 
     return [current_log] + [f for (num, f) in files]
 
+def apt_pkg_installed(apt_pkg_name: str) -> bool:
+    try:
+        # Using apt-cache policy to check if package is installed
+        output = subprocess.run(
+            ['apt-cache', 'policy', apt_pkg_name],
+            capture_output=True,
+            text=True,
+            check=False
+        )
+
+        # Parse the output to see if it's installed
+        # If package is installed, there will be an "Installed: (none)" line
+        for line in output.stdout.split('\n'):
+            line = line.strip()
+            if 'Installed: (none)' in line:
+                return False
+            elif line.startswith('Installed:'):
+                return not '(none)' in line
+
+        return False
+
+    except subprocess.SubprocessError as e:
+        print(f"Error checking {apt_pkg_name}: {e}")
+        return False
+
+
 
 def get_apt_applications() -> List[Dict[str, str]]:
     """
