@@ -18,173 +18,155 @@ Installed packages with apt
 <details><summary><b>List of all APT packages</b></summary>
 
 <!--BEGIN_APT_PACKAGES-->
-| Package                           | Description                                                             | Installed  |
-|-----------------------------------|-------------------------------------------------------------------------|------------|
-| neofetch                          | Shows Linux System Information with Distribution Logo                   | 2025-06-28 |
-| kitty                             | Fast-ish terminal, can display images. Have always used this Terminal   | 2025-06-28 |
-| element-nightly                   | Element: the future of secure communication (nightly unstable build)    | 2025-06-28 |
-| git                               | Git version history/control                                             | 2025-06-28 |
-| signal-desktop                    | Private messaging from your desktop                                     | 2025-06-28 |
-| krita                             | Drawing application, editing images. Alternative to GIMP                | 2025-06-28 |
-| fish                              | Shell, alternative to zsh. Not POSIX compatible, but very fancy.        | 2025-06-28 |
-| pkg-config                        | Needed for some Rust stuff                                              | 2025-06-28 |
-| libxkbcommon-dev                  | Needed for compiling Pinnacle WM                                        | 2025-06-28 |
-| protobuf-compiler                 | Needed for compiling Pinnacle WM                                        | 2025-06-28 |
-| libudev-dev                       | Needed for compiling Pinnacle WM                                        | 2025-06-28 |
-| libseat-dev                       | Needed for compiling Pinnacle WM                                        | 2025-06-28 |
-| libdisplay-info-dev               | Needed for compiling Pinnacle WM                                        | 2025-06-28 |
-| libinput-dev                      | Needed for compiling Pinnacle WM                                        | 2025-06-28 |
-| libgbm-dev                        | Needed for compiling Pinnacle WM                                        | 2025-06-28 |
-| lua5.4                            | Needed for configuring Pinnacle config                                  | 2025-06-28 |
-| luarocks                          | Needed for configuring Pinnacle config                                  | 2025-06-28 |
-| just                              | Fancy alternative to make                                               | 2025-06-28 |
-| emacs                             | Text editor, alternative to VIM                                         | 2025-06-28 |
-| libnotify-bin                     | Notify application                                                      | 2025-06-28 |
-| sway                              | Sway WM, useful when needing some handy Wayland tools and apps          | 2025-06-28 |
-| python3-setuptools                | -                                                                       | 2025-06-28 |
-| mplayer                           | Needed for Anki sound                                                   | 2025-06-28 |
-| kanshi                            | Dynamic output configuration for wayland                                | 2025-06-29 |
-| autorandr                         | Automatically select a display configuration based on connected devices | 2025-06-29 |
-| qalc                              | Fancy calculator that supports tons and tons of SI units                | 2025-06-29 |
-| arandr                            | Useful tool to visualize multi-monitor setup                            | 2025-06-29 |
-| wofi                              | Alternative to rofi, an application launcher tool                       | 2025-06-29 |
-| dmenu                             | Also an application launcher tool                                       | 2025-06-29 |
-| rofi                              | Application launcher tool, choose what you like I guess                 | 2025-06-29 |
-| obs-studio                        | OBS for video recording                                                 | 2025-06-29 |
-| waybar                            | Bar for wayland                                                         | 2025-06-29 |
-| hyprland                          | Hyprland, fancy trendy WM with animations and stuff                     | 2025-06-29 |
-| dunst                             | A customizable and lightweight notification-daemon                      | 2025-06-29 |
-| fnott                             | Keyboard driven notification daemon for Wayland                         | 2025-06-29 |
-| btop                              | Fancy top TUI application                                               | 2025-06-29 |
-| htop                              | Popular top TUI application                                             | 2025-06-29 |
-| hyprpaper                         | Used to display my wallpaper                                            | 2025-06-29 |
-| slurp                             | Select a region in a Wayland compositor                                 | 2025-06-29 |
-| grim                              | Grab images from a Wayland compositor                                   | 2025-06-29 |
-| wl-clipboard                      | Nice tool to copy something to clipboard on wayland WMs                 | 2025-06-29 |
-| cmake                             | Used for C and C++                                                      | 2025-06-30 |
-| meson                             | Build automation tool                                                   | 2025-06-30 |
-| cpio                              | Tool to create, extract, or copy files to and from archives             | 2025-06-30 |
-| libgl1-mesa-dev                   | Free implementation of the OpenGL API                                   | 2025-06-30 |
-| swaylock                          | Application to lock the desktop                                         | 2025-06-30 |
-| spotify-client                    | Spotify streaming music client                                          | 2025-06-30 |
-| playerctl                         | Handy tool to skip music tracks                                         | 2025-06-30 |
-| rsync                             | Used for transferring files locally or over SSH                         | 2025-06-30 |
-| python3-venv                      | This is for `python3 -m venv .venv`                                     | 2025-06-30 |
-| fonts-firacode                    | I like this font                                                        | 2025-06-30 |
-| waydroid                          | Android emulator                                                        | 2025-07-01 |
-| tor                               | Anonymous proxy                                                         | 2025-07-02 |
-| lz4                               | To handle lz4 compressed files                                          | 2025-07-02 |
-| qutebrowser                       | Browse the web with vim shortcuts                                       | 2025-07-03 |
-| bsdmainutils                      | Calendar related stuff                                                  | 2025-07-03 |
-| fontforge                         | Handy tool to manipulate open fonts                                     | 2025-07-03 |
-| fancontrol                        | Was supposed to help control the fan on the PC                          | 2025-07-03 |
-| thermald                          | Was also supposed to help control the fan on the PC                     | 2025-07-03 |
-| mako-notifier                     | Notification daemon for wayland                                         | 2025-07-04 |
-| libssl-dev                        | Various rust applications depend on this                                | 2025-07-04 |
-| wireguard                         | Wireguard VPN                                                           | 2025-07-05 |
-| resolvconf                        | Needed by Wireguard                                                     | 2025-07-05 |
-| xxd                               | Hex dump visualizer                                                     | 2025-07-05 |
-| stress                            | Stress tester                                                           | 2025-07-05 |
-| lm-sensors                        | Figuring out the hardware info on the PC                                | 2025-07-05 |
-| nodejs                            | Guess you can't be a dev without this package                           | 2025-07-05 |
-| ffmpeg                            | Useful application for converting video and images                      | 2025-07-07 |
-| fonts-font-awesome                | Nice icon fonts                                                         | 2025-07-07 |
-| libplayerctl-dev                  | Mediaplayer controls for hyprland controls                              | 2025-07-07 |
-| brightnessctl                     | Brightness control for hyprland controls                                | 2025-07-09 |
-| prettyping                        | Ping hostname or ip in a pretty visualized way                          | 2025-07-10 |
-| refind                            | Fancy and customizable multiboot selector                               | 2025-07-11 |
-| texlive                           | Used to compile LaTeX to PDF                                            | 2025-07-14 |
-| texlive-full                      | Used to compile LaTeX to PDF                                            | 2025-07-14 |
-| elisa                             | Music player supporting FLAC                                            | 2025-07-14 |
-| sass                              | SCSS compiler                                                           | 2025-07-14 |
-| chromium                          | Web browser made by Google                                              | 2025-07-15 |
-| libgtk-4-dev                      | Needed to compile Niri                                                  | 2025-07-16 |
-| libgtk-3-dev                      | Needed to compile Niri                                                  | 2025-07-16 |
-| libspa-0.2-dev                    | Needed to compile Niri                                                  | 2025-07-16 |
-| libpipewire-0.3-dev               | Needed to compile Niri                                                  | 2025-07-16 |
-| libxcb-util-dev                   | Needed to compile Niri                                                  | 2025-07-16 |
-| libxcb-cursor-dev                 | Needed to compile Niri                                                  | 2025-07-16 |
-| liblz4-dev                        | Needed to compile Niri                                                  | 2025-07-16 |
-| mpv                               | Works better with Anki                                                  | 2025-07-17 |
-| nmap                              | Scanning nearby hosts                                                   | 2025-07-18 |
-| nicotine                          | P2P music sharing application                                           | 2025-07-19 |
-| build-essential                   | Needed to build Tor Browser from source                                 | 2025-07-19 |
-| python3-pyside6.qtwidgets         | Needed to build Tor Browser from source                                 | 2025-07-19 |
-| php                               | Mostly used for `php -a`                                                | 2025-07-19 |
-| steam-installer                   | Popular launcher for gaming                                             | 2025-07-19 |
-| fuzzel                            | Alternative to rofi/wofi                                                | 2025-07-19 |
-| lutris                            | For wine applications that aren't installed on steam                    | 2025-07-20 |
-| npm                               | For javascript libraries                                                | 2025-07-21 |
-| neovim                            | Replacement for nano                                                    | 2025-07-22 |
-| openssh-server                    | Running SSH server                                                      | 2025-07-22 |
-| qemu-utils                        | Run virtual machines                                                    | 2025-07-23 |
-| qemu-system                       | Run virtual machines                                                    | 2025-07-23 |
-| virt-manager                      | Manager for qemu                                                        | 2025-07-23 |
-| kdenlive                          | Video editing software                                                  | 2025-07-23 |
-| borgmatic                         | Storage backup application                                              | 2025-07-24 |
-| unison                            | SFTP file syncing application                                           | 2025-07-24 |
-| cheese                            | -                                                                       | 2025-07-27 |
-| python3-zmq                       | -                                                                       | 2025-07-30 |
-| libadwaita-1-dev                  | -                                                                       | 2025-08-03 |
-| tree                              | See directory structure                                                 | 2025-08-04 |
-| golang                            | -                                                                       | 2025-08-05 |
-| fcitx5-mozc                       | Japanese keyboard layout                                                | 2025-08-05 |
-| linux-headers-6.12.38+deb13-amd64 | Needed to compile C driver (now unused)                                 | 2025-08-06 |
-| zoxide                            | Jump fast between folders                                               | 2025-08-06 |
-| fzf                               | Fuzzy finder tool                                                       | 2025-08-06 |
-| python3-tk                        | -                                                                       | 2025-08-10 |
-| php-cli                           | -                                                                       | 2025-08-23 |
-| php8.4                            | -                                                                       | 2025-08-23 |
-| php-pgsql                         | -                                                                       | 2025-08-23 |
-| transmission-gtk                  | -                                                                       | 2025-08-23 |
-| deluge-gtk                        | -                                                                       | 2025-08-23 |
-| libtorrent-dev                    | -                                                                       | 2025-08-23 |
-| python3-libtorrent                | -                                                                       | 2025-08-23 |
-| v4l2loopback-dkms                 | Loopback video capture                                                  | 2025-09-03 |
-| net-tools                         | Includes stuff like netstat                                             | 2025-09-03 |
-| xdg-desktop-portal-gnome          | Gnome's implementation of screensharing on wayland                      | 2025-09-04 |
-| xdg-desktop-portal                | Used for screensharing on wayland                                       | 2025-09-04 |
-| gnome                             | The gnome desktop environment                                           | 2025-09-04 |
-| ftp                               | cli tool for connecting to FTP servers                                  | 2025-09-15 |
-| default-jdk                       | JAVA SDK/JDK                                                            | 2025-09-27 |
-| nethogs                           | Monitor network traffic                                                 | 2025-09-28 |
-| maven                             | Package manager for java                                                | 2025-09-28 |
-| sqlite3                           | Need to do some SQL sometimes                                           | 2025-10-08 |
-| feh                               | Nice image viewer                                                       | 2025-10-10 |
-| dnsutils                          | DNS tools                                                               | 2025-10-10 |
-| proxychains                       | General proxy wrapper                                                   | 2025-10-11 |
-| remmina                           | Remote desktop app                                                      | 2025-10-12 |
-| traceroute                        | Gotta trace the route                                                   | 2025-10-12 |
-| cmatrix                           | Clubbed to death                                                        | 2025-10-13 |
-| python3-pip                       | Native pip package                                                      | 2025-10-13 |
-| pavucontrol                       | A volume control for the PulseAudio sound server                        | 2025-10-24 |
-| code                              | VSCode                                                                  | 2025-10-26 |
-| shellcheck                        | Used to check bash scripts                                              | 2025-11-06 |
-| dotnet-sdk-9.0                    | Used to compile Retoswap                                                | 2025-11-14 |
-| mono-xbuild                       | Used to compile Retoswap                                                | 2025-11-14 |
-| android-sdk                       | Used to compile Retoswap                                                | 2025-11-14 |
-| dotnet-sdk-10.0                   | Used to compile Retoswap                                                | 2025-11-14 |
-| dotnet-sdk-8.0                    | Used to compile Retoswap                                                | 2025-11-14 |
-| php-xdebug                        | Used to debug PHP code                                                  | 2025-11-17 |
-| liblua5.4-dev                     | Used to configure Pinnacle with Lua                                     | 2025-11-25 |
-| lua-http                          | Used to configure Pinnacle with Lua                                     | 2025-11-25 |
-| i3blocks                          | Fancy bar for sway                                                      | 2025-11-26 |
-| grimshot                          | Used for screenshotting                                                 | 2025-11-27 |
-| alacritty                         | XLP told me to install it                                               | 2025-11-27 |
-| tty-clock                         | Nice clock                                                              | 2025-11-27 |
-| swaysome                          | 10 workspaces per monitor hack for sway                                 | 2025-11-30 |
-| autoconf                          | Used for compiling Ladybird browser                                     | 2025-12-03 |
-| libasound2-dev                    | Used for compiling of Ladybird browser                                  | 2025-12-05 |
-| swayidle                          | Automatically detect when sway is at idle                               | 2025-12-05 |
-| nginx                             | Used to run PHP and test 4get                                           | 2025-12-08 |
-| libsqlite3-dev                    | Used to test 4get                                                       | 2025-12-11 |
-| libgd-dev                         | Used to test 4get                                                       | 2025-12-11 |
-| outline-client                    | -                                                                       | 2025-12-12 |
-| libsfml-dev                       | Used to compile self-made game                                          | 2025-12-12 |
-| php-dev                           | Used to bind rust libraries to PHP                                      | 2025-12-14 |
-| clang                             | Used by some rust applications                                          | 2025-12-14 |
-| libclang-dev                      | Used by some rust applications                                          | 2025-12-14 |
-| openvpn                           | Used to test VPN services that support OpenVPN                          | 2025-12-16 |
+| Package                   | Description                                                             | Installed  |
+|---------------------------|-------------------------------------------------------------------------|------------|
+| kitty                     | Fast-ish terminal, can display images. Have always used this Terminal   | 2025-06-28 |
+| element-nightly           | Element: the future of secure communication (nightly unstable build)    | 2025-06-28 |
+| git                       | Git version history/control                                             | 2025-06-28 |
+| signal-desktop            | Private messaging from your desktop                                     | 2025-06-28 |
+| krita                     | Drawing application, editing images. Alternative to GIMP                | 2025-06-28 |
+| fish                      | Shell, alternative to zsh. Not POSIX compatible, but very fancy.        | 2025-06-28 |
+| pkg-config                | Needed for some Rust stuff                                              | 2025-06-28 |
+| libxkbcommon-dev          | Needed for compiling Pinnacle WM                                        | 2025-06-28 |
+| libudev-dev               | Needed for compiling Pinnacle WM                                        | 2025-06-28 |
+| libdisplay-info-dev       | Needed for compiling Pinnacle WM                                        | 2025-06-28 |
+| libgbm-dev                | Needed for compiling Pinnacle WM                                        | 2025-06-28 |
+| luarocks                  | Needed for configuring Pinnacle config                                  | 2025-06-28 |
+| emacs                     | Text editor, alternative to VIM                                         | 2025-06-28 |
+| libnotify-bin             | Notify application                                                      | 2025-06-28 |
+| sway                      | Sway WM, useful when needing some handy Wayland tools and apps          | 2025-06-28 |
+| mplayer                   | Needed for Anki sound                                                   | 2025-06-28 |
+| autorandr                 | Automatically select a display configuration based on connected devices | 2025-06-29 |
+| qalc                      | Fancy calculator that supports tons and tons of SI units                | 2025-06-29 |
+| arandr                    | Useful tool to visualize multi-monitor setup                            | 2025-06-29 |
+| wofi                      | Alternative to rofi, an application launcher tool                       | 2025-06-29 |
+| rofi                      | Application launcher tool, choose what you like I guess                 | 2025-06-29 |
+| obs-studio                | OBS for video recording                                                 | 2025-06-29 |
+| hyprland                  | Hyprland, fancy trendy WM with animations and stuff                     | 2025-06-29 |
+| dunst                     | A customizable and lightweight notification-daemon                      | 2025-06-29 |
+| btop                      | Fancy top TUI application                                               | 2025-06-29 |
+| htop                      | Popular top TUI application                                             | 2025-06-29 |
+| slurp                     | Select a region in a Wayland compositor                                 | 2025-06-29 |
+| grim                      | Grab images from a Wayland compositor                                   | 2025-06-29 |
+| wl-clipboard              | Nice tool to copy something to clipboard on wayland WMs                 | 2025-06-29 |
+| cmake                     | Used for C and C++                                                      | 2025-06-30 |
+| cpio                      | Tool to create, extract, or copy files to and from archives             | 2025-06-30 |
+| swaylock                  | Application to lock the desktop                                         | 2025-06-30 |
+| spotify-client            | Spotify streaming music client                                          | 2025-06-30 |
+| playerctl                 | Handy tool to skip music tracks                                         | 2025-06-30 |
+| rsync                     | Used for transferring files locally or over SSH                         | 2025-06-30 |
+| python3-venv              | This is for `python3 -m venv .venv`                                     | 2025-06-30 |
+| fonts-firacode            | I like this font                                                        | 2025-06-30 |
+| waydroid                  | Android emulator                                                        | 2025-07-01 |
+| tor                       | Anonymous proxy                                                         | 2025-07-02 |
+| qutebrowser               | Browse the web with vim shortcuts                                       | 2025-07-03 |
+| fontforge                 | Handy tool to manipulate open fonts                                     | 2025-07-03 |
+| thermald                  | Was also supposed to help control the fan on the PC                     | 2025-07-03 |
+| mako-notifier             | Notification daemon for wayland                                         | 2025-07-04 |
+| libssl-dev                | Various rust applications depend on this                                | 2025-07-04 |
+| wireguard                 | Wireguard VPN                                                           | 2025-07-05 |
+| resolvconf                | Needed by Wireguard                                                     | 2025-07-05 |
+| xxd                       | Hex dump visualizer                                                     | 2025-07-05 |
+| stress                    | Stress tester                                                           | 2025-07-05 |
+| lm-sensors                | Figuring out the hardware info on the PC                                | 2025-07-05 |
+| nodejs                    | Guess you can't be a dev without this package                           | 2025-07-05 |
+| ffmpeg                    | Useful application for converting video and images                      | 2025-07-07 |
+| libplayerctl-dev          | Mediaplayer controls for hyprland controls                              | 2025-07-07 |
+| prettyping                | Ping hostname or ip in a pretty visualized way                          | 2025-07-10 |
+| texlive                   | Used to compile LaTeX to PDF                                            | 2025-07-14 |
+| elisa                     | Music player supporting FLAC                                            | 2025-07-14 |
+| chromium                  | Web browser made by Google                                              | 2025-07-15 |
+| libgtk-4-dev              | Needed to compile Niri                                                  | 2025-07-16 |
+| libspa-0.2-dev            | Needed to compile Niri                                                  | 2025-07-16 |
+| libxcb-util-dev           | Needed to compile Niri                                                  | 2025-07-16 |
+| liblz4-dev                | Needed to compile Niri                                                  | 2025-07-16 |
+| nmap                      | Scanning nearby hosts                                                   | 2025-07-18 |
+| nicotine                  | P2P music sharing application                                           | 2025-07-19 |
+| build-essential           | Needed to build Tor Browser from source                                 | 2025-07-19 |
+| python3-pyside6.qtwidgets | Needed to build Tor Browser from source                                 | 2025-07-19 |
+| php                       | Mostly used for `php -a`                                                | 2025-07-19 |
+| steam-installer           | Popular launcher for gaming                                             | 2025-07-19 |
+| fuzzel                    | Alternative to rofi/wofi                                                | 2025-07-19 |
+| lutris                    | For wine applications that aren't installed on steam                    | 2025-07-20 |
+| npm                       | For javascript libraries                                                | 2025-07-21 |
+| openssh-server            | Running SSH server                                                      | 2025-07-22 |
+| qemu-utils                | Run virtual machines                                                    | 2025-07-23 |
+| qemu-system               | Run virtual machines                                                    | 2025-07-23 |
+| virt-manager              | Manager for qemu                                                        | 2025-07-23 |
+| kdenlive                  | Video editing software                                                  | 2025-07-23 |
+| borgmatic                 | Storage backup application                                              | 2025-07-24 |
+| unison                    | SFTP file syncing application                                           | 2025-07-24 |
+| python3-zmq               | -                                                                       | 2025-07-30 |
+| tree                      | See directory structure                                                 | 2025-08-04 |
+| golang                    | -                                                                       | 2025-08-05 |
+| fcitx5-mozc               | Japanese keyboard layout                                                | 2025-08-05 |
+| zoxide                    | Jump fast between folders                                               | 2025-08-06 |
+| fzf                       | Fuzzy finder tool                                                       | 2025-08-06 |
+| python3-tk                | -                                                                       | 2025-08-10 |
+| php8.4                    | I'm kind of a PHP fanboy                                                | 2025-08-23 |
+| transmission-gtk          | Simple torrent application                                              | 2025-08-23 |
+| libtorrent-dev            | -                                                                       | 2025-08-23 |
+| v4l2loopback-dkms         | Loopback video capture                                                  | 2025-09-03 |
+| net-tools                 | Includes stuff like netstat                                             | 2025-09-03 |
+| xdg-desktop-portal-gnome  | Gnome's implementation of screensharing on wayland                      | 2025-09-04 |
+| xdg-desktop-portal        | Used for screensharing on wayland                                       | 2025-09-04 |
+| gnome                     | The gnome desktop environment                                           | 2025-09-04 |
+| default-jdk               | JAVA SDK/JDK                                                            | 2025-09-27 |
+| maven                     | Package manager for java                                                | 2025-09-28 |
+| feh                       | Nice image viewer                                                       | 2025-10-10 |
+| proxychains               | General proxy wrapper                                                   | 2025-10-11 |
+| traceroute                | Gotta trace the route                                                   | 2025-10-12 |
+| cmatrix                   | Clubbed to death                                                        | 2025-10-13 |
+| python3-pip               | Native pip package                                                      | 2025-10-13 |
+| code                      | VSCode                                                                  | 2025-10-26 |
+| dotnet-sdk-9.0            | Used to compile Retoswap                                                | 2025-11-14 |
+| android-sdk               | Used to compile Retoswap                                                | 2025-11-14 |
+| dotnet-sdk-8.0            | Used to compile Retoswap                                                | 2025-11-14 |
+| liblua5.4-dev             | Used to configure Pinnacle with Lua                                     | 2025-11-25 |
+| i3blocks                  | Fancy bar for sway                                                      | 2025-11-26 |
+| grimshot                  | Used for screenshotting                                                 | 2025-11-27 |
+| tty-clock                 | Nice clock                                                              | 2025-11-27 |
+| swaysome                  | 10 workspaces per monitor hack for sway                                 | 2025-11-30 |
+| libasound2-dev            | Used for compiling of Ladybird browser                                  | 2025-12-05 |
+| nginx                     | Used to run PHP and test 4get                                           | 2025-12-08 |
+| libgd-dev                 | Used to test 4get                                                       | 2025-12-11 |
+| libsfml-dev               | Used to compile self-made game                                          | 2025-12-12 |
+| clang                     | Used by some rust applications                                          | 2025-12-14 |
+| openvpn                   | Used to test VPN services that support OpenVPN                          | 2025-12-16 |
+| foot                      | Lightweight fast terminal                                               | 2025-12-25 |
+| fastfetch                 | Since Neofetch is not available anymore                                 | 2025-12-25 |
+| python3.13-venv           | Used for creating python environments                                   | 2025-12-27 |
+| radeontop                 | To monitor AMD Radeon graphics card                                     | 2025-12-29 |
+| torbrowser-launcher       | Privacy-focused web browser                                             | 2025-12-29 |
+| mullvad-browser           | Privacy-focused web browser v2                                          | 2025-12-30 |
+| python3-full              | Needed to compile termdown                                              | 2026-01-02 |
+| sbcl                      | Used to run lisp applications                                           | 2026-01-03 |
+| cl-quicklisp              | Helper to run lisp applications                                         | 2026-01-03 |
+| xdg-desktop-portal-wlr    | Needed to share screen on sway                                          | 2026-01-03 |
+| yt-dlp                    | Nice tool to download youtube videos                                    | 2026-01-07 |
+| libglib2.0-dev            | Needed to compile czkawka                                               | 2026-01-07 |
+| libpango1.0-dev           | Needed to compile czkawka                                               | 2026-01-07 |
+| libgdk-pixbuf-2.0-dev     | Needed to compile czkawka                                               | 2026-01-07 |
+| ripgrep                   | recursively search the current directory for lines matching a pattern   | 2026-01-09 |
+| libxcb-xtest0             | Needed to install Zoom                                                  | 2026-01-12 |
+| gdb                       | Debugging tool                                                          | 2026-01-12 |
+| libavutil-dev             | Needed to install Arknights Endfield launcher                           | 2026-01-22 |
+| libavcodec-dev            | Needed to install Arknights Endfield launcher                           | 2026-01-22 |
+| libavformat-dev           | Needed to install Arknights Endfield launcher                           | 2026-01-22 |
+| libswscale-dev            | Needed to install Arknights Endfield launcher                           | 2026-01-22 |
+| libavdevice-dev           | Needed to install Arknights Endfield launcher                           | 2026-01-22 |
+| sass                      | Used to compile SCSS                                                    | 2026-01-27 |
+| glslang-dev               | Needed to compile monado                                                | 2026-01-31 |
+| glslang-tools             | Needed to compile monado                                                | 2026-01-31 |
+| libeigen3-dev             | Needed to compile monado                                                | 2026-01-31 |
+| libv4l-dev                | Needed to compile monado                                                | 2026-01-31 |
+| libusb-dev                | Needed to compile monado                                                | 2026-01-31 |
+| ncal                      | Calendar in the terminal                                                | 2026-02-03 |
+| ntsync-kernel-dkms        | Nice package to have to prevent Arknights Endfield from crashing by AFK | 2026-02-04 |
+| mumble                    | Open-source Teamspeak alternative                                       | 2026-02-05 |
+| transmission-qt           | Light torrent client                                                    | 2026-02-11 |
+| bruno                     | REST API application                                                    | 2026-02-20 |
+| qbittorrent               | -                                                                       | 2026-02-21 |
 <!--END_APT_PACKAGES-->
 
 </details>
@@ -196,36 +178,22 @@ All the packages installed from source (or not found in apt)
 <details><summary><b>List of all applications built from source</b></summary>
 
 <!--BEGIN_SOURCE_PACKAGES-->
-| Name                 | Link                                                              | Last Updated |
-|----------------------|-------------------------------------------------------------------|--------------|
-| termdown             | [Source link](https://github.com/trehn/termdown)                  | 2025-06-28   |
-| hyprsome             | [Source link](https://github.com/Aadniz/hyprsome)                 | 2025-06-29   |
-| Hyprshot             | [Source link](https://github.com/Gustash/Hyprshot)                | 2025-06-29   |
-| spotify-adblock      | [Source link](https://github.com/abba23/spotify-adblock)          | 2025-06-30   |
-| motus                | -                                                                 | 2025-07-05   |
-| xwayland-satellite   | [Source link](https://github.com/Supreeeme/xwayland-satellite)    | 2025-07-16   |
-| swww                 | [Source link](https://github.com/LGFae/swww)                      | 2025-07-16   |
-| anki                 | -                                                                 | 2025-07-17   |
-| torbrowser-launcher  | [Source link](https://github.com/torproject/torbrowser-launcher)  | 2025-07-19   |
-| nvim-linux-x86_64    | -                                                                 | 2025-08-02   |
-| hydroxide            | [Source link](https://github.com/emersion/hydroxide)              | 2025-08-05   |
-| Bruno                | -                                                                 | 2025-08-26   |
-| teamviewer           | -                                                                 | 2025-08-27   |
-| anki-git             | [Source link](https://github.com/ankitects/anki)                  | 2025-09-28   |
-| haveno               | [Source link](https://github.com/haveno-dex/haveno)               | 2025-10-02   |
-| Jetbrains            | -                                                                 | 2025-11-14   |
-| niri                 | [Source link](https://github.com/YaLTeR/niri)                     | 2025-11-15   |
-| pinnacle             | [Source link](https://github.com/pinnacle-comp/pinnacle)          | 2025-11-25   |
-| pfetch-rs            | [Source link](https://github.com/Gobidev/pfetch-rs)               | 2025-11-30   |
-| treemd               | [Source link](https://github.com/Epistates/treemd)                | 2025-12-03   |
-| ladybird             | [Source link](https://github.com/LadybirdBrowser/ladybird)        | 2025-12-03   |
-| gtt                  | [Source link](https://github.com/eeeXun/gtt)                      | 2025-12-05   |
-| SwayAudioIdleInhibit | [Source link](https://github.com/ErikReider/SwayAudioIdleInhibit) | 2025-12-05   |
-| kotofetch            | [Source link](https://github.com/hxpe-dev/kotofetch)              | 2025-12-06   |
-| Outline              | -                                                                 | 2025-12-12   |
-| Element-Nightly      | -                                                                 | 2025-12-13   |
-| Signal               | -                                                                 | 2025-12-13   |
-| tor-browser          | -                                                                 | 2025-12-21   |
+| Name            | Link                                                     | Last Updated |
+|-----------------|----------------------------------------------------------|--------------|
+| Hyprshot        | [Source link](https://github.com/Gustash/Hyprshot)       | 2025-06-29   |
+| niri            | [Source link](https://github.com/YaLTeR/niri)            | 2025-11-15   |
+| gtt             | [Source link](https://github.com/eeeXun/gtt)             | 2025-12-05   |
+| kotofetch       | [Source link](https://github.com/hxpe-dev/kotofetch)     | 2025-12-06   |
+| spotify-adblock | [Source link](https://github.com/abba23/spotify-adblock) | 2025-12-26   |
+| gotop           | [Source link](https://github.com/xxxserxxx/gotop)        | 2025-12-27   |
+| termdown        | [Source link](https://github.com/trehn/termdown)         | 2026-01-02   |
+| czkawka         | [Source link](https://github.com/qarmin/czkawka)         | 2026-01-07   |
+| zoom            | -                                                        | 2026-01-12   |
+| hydroxide       | [Source link](https://github.com/emersion/hydroxide)     | 2026-01-23   |
+| haveno          | [Source link](https://github.com/haveno-dex/haveno)      | 2026-02-16   |
+| Element-Nightly | -                                                        | 2026-02-17   |
+| Signal          | -                                                        | 2026-02-17   |
+| Jetbrains       | -                                                        | 2026-02-19   |
 <!--END_SOURCE_PACKAGES-->
 
 </details>
