@@ -28,7 +28,6 @@ Installed packages with apt
 | pkg-config                | Needed for some Rust stuff                                              | 2025-06-28 |
 | libxkbcommon-dev          | Needed for compiling Pinnacle WM                                        | 2025-06-28 |
 | libudev-dev               | Needed for compiling Pinnacle WM                                        | 2025-06-28 |
-| libgbm-dev                | Needed for compiling Pinnacle WM                                        | 2025-06-28 |
 | emacs                     | Text editor, alternative to VIM                                         | 2025-06-28 |
 | libnotify-bin             | Notify application                                                      | 2025-06-28 |
 | sway                      | Sway WM, useful when needing some handy Wayland tools and apps          | 2025-06-28 |
@@ -54,7 +53,6 @@ Installed packages with apt
 | fonts-firacode            | I like this font                                                        | 2025-06-30 |
 | waydroid                  | Android emulator                                                        | 2025-07-01 |
 | tor                       | Anonymous proxy                                                         | 2025-07-02 |
-| fontforge                 | Handy tool to manipulate open fonts                                     | 2025-07-03 |
 | mako-notifier             | Notification daemon for wayland                                         | 2025-07-04 |
 | libssl-dev                | Various rust applications depend on this                                | 2025-07-04 |
 | wireguard                 | Wireguard VPN                                                           | 2025-07-05 |
@@ -68,7 +66,6 @@ Installed packages with apt
 | elisa                     | Music player supporting FLAC                                            | 2025-07-14 |
 | chromium                  | Web browser made by Google                                              | 2025-07-15 |
 | libgtk-4-dev              | Needed to compile Niri                                                  | 2025-07-16 |
-| libxcb-util-dev           | Needed to compile Niri                                                  | 2025-07-16 |
 | nmap                      | Scanning nearby hosts                                                   | 2025-07-18 |
 | nicotine                  | P2P music sharing application                                           | 2025-07-19 |
 | build-essential           | Needed to build Tor Browser from source                                 | 2025-07-19 |
@@ -93,7 +90,6 @@ Installed packages with apt
 | fzf                       | Fuzzy finder tool                                                       | 2025-08-06 |
 | python3-tk                | -                                                                       | 2025-08-10 |
 | php8.4                    | I'm kind of a PHP fanboy                                                | 2025-08-23 |
-| libtorrent-dev            | -                                                                       | 2025-08-23 |
 | v4l2loopback-dkms         | Loopback video capture                                                  | 2025-09-03 |
 | net-tools                 | Includes stuff like netstat                                             | 2025-09-03 |
 | xdg-desktop-portal-gnome  | Gnome's implementation of screensharing on wayland                      | 2025-09-04 |
@@ -101,16 +97,13 @@ Installed packages with apt
 | gnome                     | The gnome desktop environment                                           | 2025-09-04 |
 | default-jdk               | JAVA SDK/JDK                                                            | 2025-09-27 |
 | feh                       | Nice image viewer                                                       | 2025-10-10 |
-| traceroute                | Gotta trace the route                                                   | 2025-10-12 |
 | cmatrix                   | Clubbed to death                                                        | 2025-10-13 |
 | python3-pip               | Native pip package                                                      | 2025-10-13 |
-| dotnet-sdk-9.0            | Used to compile Retoswap                                                | 2025-11-14 |
 | dotnet-sdk-8.0            | Used to compile Retoswap                                                | 2025-11-14 |
 | i3blocks                  | Fancy bar for sway                                                      | 2025-11-26 |
 | grimshot                  | Used for screenshotting                                                 | 2025-11-27 |
 | swaysome                  | 10 workspaces per monitor hack for sway                                 | 2025-11-30 |
 | libasound2-dev            | Used for compiling of Ladybird browser                                  | 2025-12-05 |
-| libgd-dev                 | Used to test 4get                                                       | 2025-12-11 |
 | clang                     | Used by some rust applications                                          | 2025-12-14 |
 | foot                      | Lightweight fast terminal                                               | 2025-12-25 |
 | fastfetch                 | Since Neofetch is not available anymore                                 | 2025-12-25 |
@@ -144,8 +137,8 @@ Installed packages with apt
 | mumble                    | Open-source Teamspeak alternative                                       | 2026-02-05 |
 | transmission-qt           | Light torrent client (QT)                                               | 2026-02-11 |
 | bruno                     | REST API application                                                    | 2026-02-20 |
-| transmission-gtk          | Light torrent client (GTK)                                              | 2026-01-04 |
 | sass                      | Used to compile SCSS                                                    | 2026-01-27 |
+| transmission-gtk          | -                                                                       | 2026-01-04 |
 <!--END_APT_PACKAGES-->
 
 </details>
@@ -170,9 +163,10 @@ All the packages installed from source (or not found in apt)
 | zoom            | -                                                        | 2026-01-12   |
 | hydroxide       | [Source link](https://github.com/emersion/hydroxide)     | 2026-01-23   |
 | haveno          | [Source link](https://github.com/haveno-dex/haveno)      | 2026-02-16   |
-| Element-Nightly | -                                                        | 2026-02-17   |
-| Signal          | -                                                        | 2026-02-17   |
 | Jetbrains       | -                                                        | 2026-02-19   |
+| Element-Nightly | -                                                        | 2026-02-26   |
+| Bruno           | -                                                        | 2026-02-26   |
+| Signal          | -                                                        | 2026-02-26   |
 <!--END_SOURCE_PACKAGES-->
 
 </details>
