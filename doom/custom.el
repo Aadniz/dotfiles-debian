@@ -1,4 +1,5 @@
 ;;; custom.el -*- lexical-binding: t; -*-
+(load-file "~/.config/doom/faces.el")
 
 ;; Automatically sync org files when saving
 (defvar sync-to-unison--running nil "Is a sync currently running?")

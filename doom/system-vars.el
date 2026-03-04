@@ -1,0 +1,6 @@
+  (setq user-theme (list (cons 'foreground "#ffffff")
+                         (cons 'background "#111111")
+                         (cons 'primary "#7d98ec")
+                         (cons 'secondary "#c4e3ff")
+                         (cons 'third "#cccccc")
+                         (cons 'grey "#606060")))
