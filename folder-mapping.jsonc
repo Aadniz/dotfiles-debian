@@ -13,6 +13,7 @@
     "*.swp"
   ],
   "folders": {
+    "feh": "~/.config/feh",
     "fish": "~/.config/fish",
     "fastfetch": "~/.config/fastfetch",
     "wofi": "~/.config/wofi",

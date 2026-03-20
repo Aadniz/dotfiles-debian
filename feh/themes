@@ -1,0 +1,6 @@
+feh \
+  --image-bg "#111111" \
+  -S mtime \
+  -g 1000x1000 \
+  --scale-down \
+  --auto-reload
