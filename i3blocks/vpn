@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+
+LABEL="${LABEL:-}"
+ICON_COLOR="${PRIMARY_COLOR:-#7d98ec}"
+DEFAULT_COLOR="${FOREGROUND_COLOR:-#e3e5d8}"
+
+set -e
+
+#output=$(ip link show type wireguard | grep ": <")
+#for item in "${output//\\n/}"
+#do
+#  echo $item | cut -d ":" -f 2 | xargs
+#done
+
+buffer=""
+while IFS= read -r line; do
+    interface=$(echo $line | cut -d ":" -f 2 | xargs)
+    buffer="$buffer $interface"
+done <<< "$(ip link show type wireguard | grep ": <")"
+
+buffer=$(echo $buffer | xargs)
+
+if [ ! "$buffer" ]; then
+  # There was no wireguard connection, just hide the cloud icon
+  exit 0
+fi
+
+echo "<span color=\"$ICON_COLOR\">$LABEL</span> $buffer"
+echo "<span color=\"$ICON_COLOR\">$LABEL</span> $buffer"
+echo "$DEFAULT_COLOR"
