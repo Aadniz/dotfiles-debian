@@ -26,6 +26,8 @@
     "niri":  "~/.config/niri",
     "doom": "~/.config/doom",
     "foot": "~/.config/foot",
-    "i3blocks": "~/.config/i3blocks"
+    "i3blocks": "~/.config/i3blocks",
+    "workstyle": "~/.config/workstyle",
+    "nano": "~/.config/nano"
   }
 }
