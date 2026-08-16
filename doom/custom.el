@@ -39,3 +39,15 @@
               (interactive)
               (call-interactively '+multiple-cursors/evil-mc-toggle-cursor-here)
               (evil-next-line 1)))
+
+;; Speed up TRAMP according to https://github.com/doomemacs/doomemacs/issues/3909#issuecomment-786596887
+(after! tramp
+  (setq tramp-inline-compress-start-size 1000)
+  (setq tramp-copy-size-limit 10000)
+  (setq vc-handled-backends '(Git))
+  (setq tramp-verbose 1)
+  (setq tramp-default-method "scp")
+  (setq tramp-use-ssh-controlmaster-options nil)
+  (setq projectile--mode-line "Projectile")
+  (setq tramp-verbose 1))
+
