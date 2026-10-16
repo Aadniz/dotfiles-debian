@@ -1,71 +1,65 @@
 #!/usr/bin/env python
-import os
-import shutil
-import fnmatch
-from pathlib import Path
+from datetime import date
 
-from utils import config as config_utils
+from utils import apt, folders, source
+from utils.config import README_FILE, ROOT, load_config
 from utils.readme import Readme
-from utils import utils
-
-SCRIPT_DIR = os.path.dirname(os.path.realpath(__file__))
-CONFIG_FILE = SCRIPT_DIR + "/folder-mapping.jsonc"
-README_FILE = SCRIPT_DIR + "/README.md"
-
-print(f"Saving the files from the computer into the dotfiles folder {SCRIPT_DIR}\n")
-
-config = config_utils.read_config(CONFIG_FILE)
-folders = config.get('folders', {})
-ignore_patterns = config.get('ignore_patterns', [])
-source_application_paths = config.get('source_application_paths', [])
 
 
-print("  IGNORE PATTERNS:")
-print("    " + "\n    ".join(ignore_patterns))
+def update_apt_table(readme: Readme) -> None:
+    """Rows are only ever added (when installed) or removed (when uninstalled), never rewritten."""
+    installed = apt.installed()
+    old = readme.table("APT_PACKAGES")
+    rows = [row for row in old if row[0] in installed]
+    listed = {row[0] for row in rows}
+    new = sorted((when, name) for name, when in apt.explicit_installs().items() if name in installed and name not in listed)
+    rows += [[name, "-", when[:10]] for when, name in new]
+    # Stable sort: new rows slot in by date, existing rows keep their order
+    rows.sort(key=lambda row: row[2])
+    readme.set_table("APT_PACKAGES", ["Package", "Description", "Installed"], rows)
 
-print("  FOLDERS:")
-for (dotfile_folder, system_folder) in folders.items():
-    print(f"    {os.path.expanduser(system_folder)} -> {SCRIPT_DIR}/{dotfile_folder}")
+    removed = [row[0] for row in old if row[0] not in installed]
+    print(f"APT packages added: {', '.join(name for _, name in new) or 'none'}")
+    print(f"APT packages removed: {', '.join(removed) or 'none'}")
 
 
-print("\nAre you sure you want to do this? [Y/n]")
-ans = input("> ")
+def update_repo_table(readme: Readme) -> None:
+    repos = {}
+    for name, sources in apt.sources([row[0] for row in readme.table("APT_PACKAGES")]).items():
+        for repo in filter(apt.is_third_party, sources):
+            repos.setdefault(repo, []).append(name)
+    rows = [[repo, ", ".join(sorted(names))] for repo, names in sorted(repos.items())]
+    readme.set_table("APT_REPOSITORIES", ["Repository", "Packages"], rows)
 
-if ans != "Y" and ans != "y":
-    print("Canceled")
-    exit(130)
 
-for (dotfile_folder, system_folder) in folders.items():
-    from_folder = Path(os.path.expanduser(system_folder))
-    to_folder = Path(SCRIPT_DIR + "/" + dotfile_folder)
+def update_source_table(readme: Readme, paths: list[str]) -> None:
+    """Rows keep their position, only link and date get refreshed. New folders are appended."""
+    apps = source.applications(paths)
+    old_links = {name: link for name, link, _ in readme.table("SOURCE_PACKAGES")}
+    listed = [name for name in old_links if name in apps]
+    new = sorted(apps.keys() - old_links.keys(), key=lambda name: apps[name][1])
+    rows = []
+    for name in listed + new:
+        link, mtime = apps[name]
+        # Without a git remote, keep whatever link was written by hand
+        rows.append([name, f"[Source link]({link})" if link else old_links.get(name, "-"), date.fromtimestamp(mtime).isoformat()])
+    readme.set_table("SOURCE_PACKAGES", ["Name", "Link", "Last Updated"], rows)
 
-    if not from_folder.exists():
-        print(f"Warning: Source path {from_folder} does not exist, skipping")
-        continue
+    print(f"Source packages added: {', '.join(new) or 'none'}")
+    print(f"Source packages removed: {', '.join(sorted(old_links.keys() - apps.keys())) or 'none'}")
 
-    try:
-        shutil.copytree(
-            from_folder,
-            to_folder,
-            dirs_exist_ok=True,
-            ignore=lambda p, f: set(
-                f for f in os.listdir(p)
-                if utils.should_ignore(os.path.join(p, f), ignore_patterns)
-            )
-        )
-    except shutil.Error as e:
-        for (src, dst, error_msg) in e.args[0]:
-            print(f"WARNING: {error_msg}")
-        continue
+
+print(f"Saving the files from the computer into the dotfiles folder {ROOT}\n")
+
+config = load_config()
+ignore = config.get("ignore_patterns", [])
+pairs = [(system, repo) for repo, system in folders.mapping(config)]
+folders.confirm(pairs, ignore)
+for src, dst in pairs:
+    folders.copy(src, dst, ignore)
 
 readme = Readme(README_FILE)
-
-# Updating README.md apt application list
-unfound_packages = readme.get_unfound_apt_packages()
-readme.update_apt_packages(unfound_packages)
-apt_applications = utils.get_apt_applications()
-readme.update_apt_packages(apt_applications)
-
-# Updating README.md source application list
-source_applications = utils.get_source_applications(source_application_paths)
-readme.update_source_packages(source_applications)
+update_apt_table(readme)
+update_repo_table(readme)
+update_source_table(readme, config.get("source_application_paths", []))
+readme.save()
