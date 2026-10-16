@@ -28,6 +28,7 @@
     "foot": "~/.config/foot",
     "i3blocks": "~/.config/i3blocks",
     "workstyle": "~/.config/workstyle",
-    "nano": "~/.config/nano"
+    "nano": "~/.config/nano",
+    "vesktop": "~/.config/vesktop/settings"
   }
 }

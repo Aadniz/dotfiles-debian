@@ -1,0 +1,77 @@
+/* Hide decoration shit */
+[class^="avatarDecoration"]{
+  display: none;
+}
+/* Hide nitro options in the main settings */
+ul > li:has([data-settings-sidebar-item="nitro_panel"]) {
+  display: none;
+}
+#user-profile-editing-panel {
+  width: 20px;
+  margin-left: auto;
+  background-color: #1A1A1E;
+  border-right: none;
+}
+#user-profile-editing-panel > div {
+  display: none;
+}
+
+/* Popups 
+div[class^="clickTrapContainer__"]:has(div[class^="expressiveWrapper_"]) {
+  display: none;
+}*/
+
+/* Removes nameplate from sidebar */
+div[class*="nameplated__"] > div[class^="container_"] {
+  display: none;
+}
+div[class^="container_"]:has(div[class^="videoContainer_"]) {
+  background: transparent !important;
+}
+div[class^="videoContainer_"]:has(video) {
+  display: none;
+}
+/* Removes profile effects when clicking on someone's profile */
+div[class^="profileEffects__"] {
+  display: none;
+}
+
+/* These depends on the language (German) */
+div[aria-label="Ein Geschenk senden"] {
+  display: none;
+}
+div[aria-label="Abonnements"] {
+  display: none;
+}
+div[aria-label="Geschenkinventar"] {
+  display: none;
+}
+div[aria-label="Zahlungsabwicklung"] {
+  display: none;
+}
+div[aria-label="Zahlungsabwicklung"] + * {
+  display: none;
+}
+/* Usernames that have fancy rainbow colors */
+span[class^="nameContainer__"], span[class*="convenienceGlowGradient_"] {
+  --custom-gradient-color-1: #999 !important;
+  --custom-gradient-color-2: #999 !important;
+  --custom-gradient-color-3: #999 !important;
+  animation: unset !important;
+  font-family: unset !important;
+}
+span[class*="usernameGlow_"] {
+  filter: unset;
+  opacity: 1 !important;
+  transition: unset !important;
+}
+/* Some people have images that wraps around their profile */
+img[class^="profileFrameLayer__"] {
+  display: none;
+}
+div[class^="profileFrame__"] {
+  display: none;
+}
+* {
+  font-family: Geneva, Verdana, sans-serif !important;
+}

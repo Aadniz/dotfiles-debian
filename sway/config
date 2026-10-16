@@ -25,7 +25,8 @@ font pongo:Iosevka Normal 11, Font Awesome 6 Pro 11, Arimo Nerd Font Normal 11
 focus_on_window_activation smart
 hide_edge_borders none
 smart_borders on
-output * background /home/chiya/Pictures/Anime/ff/98972477_p0_edited.jpg fill
+#output * background /home/chiya/Pictures/Anime/ff/98972477_p0_edited.jpg fill
+output * background /home/chiya/Pictures/schloss-lichtenstein-16x10.jpg fill
 
 ### Output configuration
 #
@@ -44,7 +45,7 @@ output * background /home/chiya/Pictures/Anime/ff/98972477_p0_edited.jpg fill
 # Main monitor
 output "Samsung Display Corp. 0x4171 Unknown" {
   mode 2880x1800@90.001Hz
-  position 5120 950
+  position 5120 900
   scale 2
 }
 # Middle monitor
@@ -294,6 +295,7 @@ for_window [app_id="nemo"] move scratchpad, resize set 1270 px 700 px, border pi
 for_window [app_id="foot"] border pixel
 for_window [app_id="discord"] border pixel
 for_window [app_id="Element"] border pixel
+for_window [app_id="epochup"] floating enable, resize set 689 px 234 px, sticky enable, border pixel 2
 
 #
 # Scratchpad:
@@ -381,6 +383,7 @@ bindsym $mod+r mode "resize"
     bindsym $mod+Alt+b exec tor-browser
     bindsym $mod+Alt+n exec emacs
     bindsym $mod+Alt+s exec spotify-adblock
+    bindsym $mod+u exec epochup
 
 #
 # Theme:
@@ -398,6 +401,7 @@ client.background       #ffffff
 #
 # Read `man 5 sway-bar` for more information about this section.
 bar {
+#    swaybar_command ashell -c /home/chiya/Dev/rust/ashell/config.toml
     position top
 
     # When the status_command prints a new line to stdout, swaybar updates.

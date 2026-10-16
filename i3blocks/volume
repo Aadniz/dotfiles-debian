@@ -33,12 +33,12 @@ else
   
   if [ $vol -ge $AUDIO_HIGHEST_THRESH ]; then
     echo "<span color=\"$AUDIO_HIGHEST_COLOR\">$icon</span> $vol%"
-    echo $vol%
+    echo "<span color=\"$AUDIO_HIGHEST_COLOR\">$icon</span>"
     echo $AUDIO_HIGHEST_COLOR
   else
     text_color=""
     echo "<span color=\"$ICON_COLOR\">$icon</span> $vol%"
-    echo $vol%
+    echo "<span color=\"$ICON_COLOR\">$icon</span>"
     echo ""
   fi
 fi

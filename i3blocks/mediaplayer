@@ -198,6 +198,7 @@ sub playerctl {
         my $details = join(" - ", @metadata);
         $details =~ s/&/&amp;/g;
         print("<span color='".PRIMARY_COLOR."'>$label</span>  ", "$details", "$shuffle_icon\n");
+        print("<span color='".PRIMARY_COLOR."'>$label</span>\n")
     } else{
         exit(0)
     }

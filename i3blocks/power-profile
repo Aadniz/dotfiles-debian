@@ -1,0 +1,76 @@
+#!/usr/bin/env bash
+
+PERFORNACE_COLOR="#FF0000"
+BALANCED_COLOR="${PRIMARY_COLOR:-#7d98ec}"
+POWER_SAVING_COLOR="${PRIMARY_COLOR:-#93C064}"
+
+# Get current profile
+get_profile() {
+    busctl get-property org.freedesktop.UPower.PowerProfiles \
+        /org/freedesktop/UPower/PowerProfiles \
+        org.freedesktop.UPower.PowerProfiles \
+        ActiveProfile | awk -F'"' '{print $2}'
+}
+
+# Set profile
+set_profile() {
+    busctl set-property org.freedesktop.UPower.PowerProfiles \
+        /org/freedesktop/UPower/PowerProfiles \
+        org.freedesktop.UPower.PowerProfiles \
+        ActiveProfile s "$1"
+
+    # Send signal to i3blocks to refresh this block immediately
+    pkill -RTMIN+8 i3blocks 2>/dev/null || true
+}
+
+profile=$(get_profile)
+
+# Handle click events
+case $BLOCK_BUTTON in
+    1) # Left click - cycle through profiles
+        current=$(get_profile)
+        case $current in
+            "power-saver") 
+                set_profile "balanced"
+                profile="balanced"
+            ;;
+            "balanced") 
+                set_profile "performance"
+                profile="performance"
+            ;;
+            "performance") 
+                set_profile "power-saver"
+                profile="power-saver"
+            ;;
+        esac
+        ;;
+    3) # Right click - open menu
+        echo "power-saver
+balanced
+performance" | wofi --dmenu -p "Power Profile" | xargs -r -I{} set_profile {}
+        ;;
+esac
+
+case $profile in
+    "power-saver")
+        echo "󰾆"
+        echo "󰾆"
+        echo "$POWER_SAVING_COLOR"
+        ;;
+    "balanced")
+        echo "󰾅"
+        echo "󰾅"
+        echo "$BALANCED_COLOR"
+        ;;
+    "performance")
+        echo "󰓅"
+        echo "󰓅"
+        echo "$PERFORNACE_COLOR"
+        ;;
+    *)
+        echo "?"
+        echo "?"
+        echo "$BALANCED_COLOR"
+        ;;
+esac
+

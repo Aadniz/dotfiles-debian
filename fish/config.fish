@@ -13,3 +13,4 @@ set --export JAVA_HOME /usr/lib/jvm/java-21-openjdk-amd64
 
 source "$HOME/.cargo/env.fish"
 zoxide init --cmd cd fish | source
+export PATH="$HOME/.local/bin:$PATH"
