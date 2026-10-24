@@ -1,226 +1,86 @@
-#!/usr/bin/env perl
-# Copyright (C) 2014 Tony Crisci <tony@dubstepdish.com>
-# Copyright (C) 2015 Thiago Perrotta <perrotta dot thiago at poli dot ufrj dot br>
+#!/usr/bin/env bash
+# Shows the song that is currently playing.
+#
+# Only music players are shown: the apps listed in MUSIC_PLAYERS, plus any
+# browser tab whose URL matches MUSIC_URL (YouTube Music). Everything else,
+# such as youtube.com videos or VLC, is ignored.
+#
+# Clicks: left = previous, middle = play/pause, right = next, scroll = volume.
+# Set LABEL to use one icon for every player.
 
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
-# (at your option) any later version.
+PRIMARY_COLOR="${PRIMARY_COLOR:-#7d98ec}"
+SECONDARY_COLOR="${SECONDARY_COLOR:-#CC7573}"
 
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU General Public License for more details.
+# MPRIS player name (lowercase) -> icon
+declare -A MUSIC_PLAYERS=(
+    [spotify]=""
+    [elisa]=""
+)
 
-# You should have received a copy of the GNU General Public License
-# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+# Browsers report the tab URL, so YouTube Music can be told apart from YouTube.
+MUSIC_URL='^https?://music\.youtube\.com([/?#]|$)'
+MUSIC_URL_ICON=""
 
-# For all media players except mpd/cmus/rhythmbox, MPRIS support should be
-# enabled and the playerctl binary should be in your path.
-# See https://github.com/acrisci/playerctl
+SHUFFLE_ICON=""
 
-# Set instance=NAME in the i3blocks configuration to specify a music player
-# (playerctl will attempt to connect to org.mpris.MediaPlayer2.[NAME] on your
-# DBus session). If instance is empty, playerctl will connect to the first
-# supported media player it finds.
+SEP=$'\x1f'
+FORMAT="{{playerName}}$SEP{{playerInstance}}$SEP{{status}}$SEP{{xesam:url}}$SEP{{shuffle}}$SEP{{artist}}$SEP{{title}}"
 
+# Sets instance, icon, shuffle, artist and title for the first music player
+# that is playing. Returns 1 if there is none.
+find_player() {
+    local name status url
+    while IFS=$SEP read -r name instance status url shuffle artist title; do
+        [[ $status == Playing ]] || continue
 
-use Time::HiRes qw(usleep);
-use Env qw(BLOCK_INSTANCE);
+        if [[ -v MUSIC_PLAYERS[${name,,}] ]]; then
+            icon=${MUSIC_PLAYERS[${name,,}]}
+        elif [[ $url =~ $MUSIC_URL ]]; then
+            icon=$MUSIC_URL_ICON
+        else
+            continue
+        fi
 
-use constant DELAY => 50; # Delay in ms to let network-based players (spotify) reflect new data.
-use constant SPOTIFY_STR => 'spotify';
+        return 0
+    done < <(playerctl --all-players metadata --format "$FORMAT" 2>/dev/null)
 
-use constant PRIMARY_COLOR => $ENV{'PRIMARY_COLOR'} // '#7d98ec';
-use constant SECONDARY_COLOR => $ENV{'SECONDARY_COLOR'} // '#CC7573';
-use constant THIRD_COLOR => $ENV{'THIRD_COLOR'} // '#A3895C';
-use constant BACKGROUND_COLOR => $ENV{'BACKGROUND_COLOR'} // '#041520';
-use constant FOREGROUND_COLOR => $ENV{'FOREGROUND_COLOR'} // '#e3e5d8';
-
-my @metadata = ();
-my $player_arg = "";
-my $label_set = False;
-my $label = $ENV{LABEL} // "DEFAULT";
-if ($label == "DEFAULT"){
-    $label = "";
-}else{
-    $label_set = True
+    return 1
 }
 
-
-if ($BLOCK_INSTANCE) {
-    $player_arg = "--player='$BLOCK_INSTANCE'";
-
-    if ($label_set == False){
-        if ($BLOCK_INSTANCE eq "spotify"){
-            $label = "";
-        } elsif ($BLOCK_INSTANCE eq "elisa") {
-            $label = "";
-        }
-    }
+# Escapes text for pango markup.
+escape() {
+    local s=$1
+    s=${s//'&'/'&amp;'}
+    s=${s//'<'/'&lt;'}
+    s=${s//'>'/'&gt;'}
+    printf '%s' "$s"
 }
 
-sub buttons {
-    my $method = shift;
+find_player || exit 0
 
-    if($method eq 'mpd') {
-        if ($ENV{'BLOCK_BUTTON'} == 1) {
-            system("mpc prev &>/dev/null");
-        } elsif ($ENV{'BLOCK_BUTTON'} == 2) {
-            system("mpc toggle &>/dev/null");
-        } elsif ($ENV{'BLOCK_BUTTON'} == 3) {
-            system("mpc next &>/dev/null");
-        } elsif ($ENV{'BLOCK_BUTTON'} == 4) {
-            system("mpc volume +10 &>/dev/null");
-        } elsif ($ENV{'BLOCK_BUTTON'} == 5) {
-            system("mpc volume -10 &>/dev/null");
-        }
-    } elsif ($method eq 'cmus') {
-        if ($ENV{'BLOCK_BUTTON'} == 1) {
-            system("cmus-remote --prev");
-        } elsif ($ENV{'BLOCK_BUTTON'} == 2) {
-            system("cmus-remote --pause");
-        } elsif ($ENV{'BLOCK_BUTTON'} == 3) {
-            system("cmus-remote --next");
-        }
-    } elsif ($method eq 'playerctl') {
-        if ($ENV{'BLOCK_BUTTON'} == 1) {
-            system("playerctl $player_arg previous");
-            usleep(DELAY * 1000) if $BLOCK_INSTANCE eq SPOTIFY_STR;
-        } elsif ($ENV{'BLOCK_BUTTON'} == 2) {
-            system("playerctl $player_arg play-pause");
-        } elsif ($ENV{'BLOCK_BUTTON'} == 3) {
-            system("playerctl $player_arg next");
-            usleep(DELAY * 1000) if $BLOCK_INSTANCE eq SPOTIFY_STR;
-        } elsif ($ENV{'BLOCK_BUTTON'} == 4) {
-            system("playerctl $player_arg volume 0.1+");
-        } elsif ($ENV{'BLOCK_BUTTON'} == 5) {
-            system("playerctl $player_arg volume 0.1-");
-        }
-    } elsif ($method eq 'rhythmbox') {
-        if ($ENV{'BLOCK_BUTTON'} == 1) {
-            system("rhythmbox-client --previous");
-        } elsif ($ENV{'BLOCK_BUTTON'} == 2) {
-            system("rhythmbox-client --play-pause");
-        } elsif ($ENV{'BLOCK_BUTTON'} == 3) {
-            system("rhythmbox-client --next");
-        }
-    }
-}
+if [[ -n $BLOCK_BUTTON ]]; then
+    case $BLOCK_BUTTON in
+        1) playerctl --player="$instance" previous ;;
+        2) playerctl --player="$instance" play-pause ;;
+        3) playerctl --player="$instance" next ;;
+        4) playerctl --player="$instance" volume 0.1+ ;;
+        5) playerctl --player="$instance" volume 0.1- ;;
+    esac
 
-sub cmus {
-    my @cmus = split /^/, qx(cmus-remote -Q);
-    if ($? == 0) {
-        foreach my $line (@cmus) {
-            my @data = split /\s/, $line;
-            if (shift @data eq 'tag') {
-                my $key = shift @data;
-                my $value = join ' ', @data;
+    # Give the player a moment to report the new song.
+    sleep 0.2
+    find_player || exit 0
+fi
 
-                @metadata[0] = $value if $key eq 'artist';
-                @metadata[1] = $value if $key eq 'title';
-            }
-        }
+icon=${LABEL:-$icon}
 
-        if (@metadata) {
-            buttons('cmus');
+details=$title
+[[ -n $artist ]] && details="$artist - $title"
+details=$(escape "$details")
 
-            # metadata found so we are done
-            print(join ' - ', @metadata);
-            print("\n");
-            exit 0;
-        }
-    }
-}
+shuffle_text=""
+[[ $shuffle == true ]] && shuffle_text="  <span color='$SECONDARY_COLOR'>$SHUFFLE_ICON</span>"
 
-sub mpd {
-    my $data = qx(mpc);
-    if (not $data eq '') {
-        # Check if player is actually playing
-        exit(0) unless $data =~ /\[playing\]/;
-
-        buttons("mpd");
-
-        # Extract current song info (first line)
-        my ($song_info) = $data =~ /^(.*?)\n/;
-        chomp $song_info;
-
-        # Extract shuffle (random) and repeat status
-        my ($random) = $data =~ /random:\s*(\w+)/;
-        my ($repeat) = $data =~ /repeat:\s*(\w+)/;
-
-        my $shuffle_icon = "";
-        my $repeat_icon = "";
-
-        if (defined $random && $random eq 'on') {
-            $shuffle_icon = "  <span color='".SECONDARY_COLOR."'></span>";
-        }
-
-        if (defined $repeat && $repeat eq 'on') {
-            $repeat_icon = "  <span color='".SECONDARY_COLOR."'></span>";
-        }
-
-        $song_info =~ s/&/&amp;/g;
-        print("<span color='".PRIMARY_COLOR."'>$label</span>  ", "$song_info", "$shuffle_icon", "$repeat_icon\n");
-        exit 0;
-    }
-}
-
-sub playerctl {
-    buttons('playerctl');
-
-	my $status = qx(playerctl $player_arg status);
-	chomp $status;
-
-	exit(0) if $? || $status ne "Playing";
-
-    my $artist = qx(playerctl $player_arg metadata artist 2>/dev/null);
-    chomp $artist;
-    # exit status will be nonzero when playerctl cannot find your player
-    exit(0) if $? || $artist eq '(null)';
-
-    push(@metadata, $artist) if $artist;
-
-    my $title = qx(playerctl $player_arg metadata title);
-	chomp $title;
-    exit(0) if $? || $title eq '(null)';
-
-    push(@metadata, $title) if $title;
-
-	my $shuffle = qx(playerctl $player_arg shuffle); # eq "On" ? "  " : "";
-	chomp $shuffle;
-	my $shuffle_icon = "";
-	if ($shuffle eq "On") {
-		$shuffle_icon = "  <span color='".SECONDARY_COLOR."'></span>"
-	}
-
-    if (@metadata){
-        my $details = join(" - ", @metadata);
-        $details =~ s/&/&amp;/g;
-        print("<span color='".PRIMARY_COLOR."'>$label</span>  ", "$details", "$shuffle_icon\n");
-        print("<span color='".PRIMARY_COLOR."'>$label</span>\n")
-    } else{
-        exit(0)
-    }
-}
-
-sub rhythmbox {
-    buttons('rhythmbox');
-
-    my $data = qx(rhythmbox-client --print-playing --no-start);
-    print($data);
-}
-
-if ($player_arg =~ /mpd/) {
-    mpd;
-}
-elsif ($player_arg =~ /cmus/) {
-    cmus;
-}
-elsif ($player_arg =~ /rhythmbox/) {
-    rhythmbox;
-}
-else {
-    playerctl;
-}
-print("\n");
+# full_text, then short_text
+echo "<span color='$PRIMARY_COLOR'>$icon</span>  $details$shuffle_text"
+echo "<span color='$PRIMARY_COLOR'>$icon</span>"

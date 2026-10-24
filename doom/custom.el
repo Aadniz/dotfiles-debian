@@ -11,7 +11,7 @@
   "Sync org file with unison in the background."
   (when (and (eq major-mode 'org-mode)
              buffer-file-name
-             (string-prefix-p sync-to-unison-directory buffer-file-name)
+             (sync-to-unison--synced-file-p buffer-file-name)
              (file-exists-p (expand-file-name "~/.unison/org-files.prf")))
     (if sync-to-unison--running
         ;; E.g. saved while the sync from opening the file still runs: sync
@@ -48,6 +48,15 @@
       (setq sync-to-unison--pending nil)
       (sync-to-unison--start))))
 
+(defun sync-to-unison--synced-file-p (file)
+  "Is FILE under `sync-to-unison-directory', or the target of a symlink there?
+Doom visits symlinks by their target, so linked files have paths outside the directory."
+  (let ((truename (file-truename file)))
+    (or (string-prefix-p sync-to-unison-directory truename)
+        (seq-some (lambda (link) (equal (file-truename link) truename))
+                  (seq-filter #'file-symlink-p
+                              (directory-files sync-to-unison-directory t "\\.org\\'" t))))))
+
 (defun sync-to-unison--revert-buffers ()
   "Revert unmodified buffers whose synced files changed on disk.
 Returns the names of the reverted buffers."
@@ -55,7 +64,7 @@ Returns the names of the reverted buffers."
     (dolist (buffer (buffer-list))
       (with-current-buffer buffer
         (when (and buffer-file-name
-                   (string-prefix-p sync-to-unison-directory buffer-file-name)
+                   (sync-to-unison--synced-file-p buffer-file-name)
                    (file-exists-p buffer-file-name)
                    (not (verify-visited-file-modtime buffer)))
           (if (buffer-modified-p)

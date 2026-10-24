@@ -6,6 +6,8 @@ VOL_MEDIUM_ICON=""
 VOL_MEDIUM_TRESH=30
 VOL_LOW_ICON=""
 VOL_NONE_ICON=""
+# The icons are Font Awesome 6 codepoints; the bar font (Arimo Nerd Font) lacks some of them
+ICON_FONT="Font Awesome 6 Pro Solid"
 
 AUDIO_HIGHEST_THRESH=90
 AUDIO_HIGHEST_COLOR="#FF0000"
@@ -16,8 +18,8 @@ MUTED_ICON=""
 wpctl_output=$(wpctl get-volume "@DEFAULT_AUDIO_SINK@")
 
 if ( echo $wpctl_output | grep -qi muted ); then
-  echo "<span color=\"$MUTED_COLOR\">$MUTED_ICON</span> muted"
-  echo $MUTED_ICON
+  echo "<span font_family=\"$ICON_FONT\" color=\"$MUTED_COLOR\">$MUTED_ICON</span> muted"
+  echo "<span font_family=\"$ICON_FONT\">$MUTED_ICON</span>"
   echo $MUTED_COLOR
 else
   vol=$(echo $wpctl_output | cut -d " " -f 2 | awk '{printf "%d\n", $1 * 100}')
@@ -32,13 +34,13 @@ else
   fi
   
   if [ $vol -ge $AUDIO_HIGHEST_THRESH ]; then
-    echo "<span color=\"$AUDIO_HIGHEST_COLOR\">$icon</span> $vol%"
-    echo "<span color=\"$AUDIO_HIGHEST_COLOR\">$icon</span>"
+    echo "<span font_family=\"$ICON_FONT\" color=\"$AUDIO_HIGHEST_COLOR\">$icon</span> $vol%"
+    echo "<span font_family=\"$ICON_FONT\" color=\"$AUDIO_HIGHEST_COLOR\">$icon</span>"
     echo $AUDIO_HIGHEST_COLOR
   else
     text_color=""
-    echo "<span color=\"$ICON_COLOR\">$icon</span> $vol%"
-    echo "<span color=\"$ICON_COLOR\">$icon</span>"
+    echo "<span font_family=\"$ICON_FONT\" color=\"$ICON_COLOR\">$icon</span> $vol%"
+    echo "<span font_family=\"$ICON_FONT\" color=\"$ICON_COLOR\">$icon</span>"
     echo ""
   fi
 fi

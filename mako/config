@@ -21,3 +21,6 @@ default-timeout=0
 border-color=#e1746d
 border-size=3
 default-timeout=0
+
+[mode=do-not-disturb]
+invisible=1

@@ -246,6 +246,8 @@ Installed packages with apt
 | pv                        | Used to check new lines per second in log files                         | 2026-09-29 |
 | libwebkit2gtk-4.1-dev     | -                                                                       | 2026-10-08 |
 | xdg-desktop-portal-wlr    | Share your screen on Wayland. Hyprland's desktop portal                 | 2026-10-13 |
+| python3-textual           | TUI library for python                                                  | 2026-10-17 |
+| age                       | To encrypt/decrypt sops files                                           | 2026-10-21 |
 <!--END_APT_PACKAGES-->
 
 </details>

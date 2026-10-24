@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+
+# Requires a matching mode section in ~/.config/mako/config:
+#   [mode=do-not-disturb]
+#   invisible=1
+
+DND_MODE="do-not-disturb"
+
+ICON_COLOR="${PRIMARY_COLOR:-#7d98ec}"
+DND_COLOR="${THIRD_COLOR:-#6c757d}"
+NOTIFY_ICON="󰂚"
+DND_ICON="󰂛"
+
+# Left click - toggle do not disturb
+if [[ "$BLOCK_BUTTON" -eq 1 ]]; then
+    makoctl mode -t "$DND_MODE" > /dev/null
+fi
+
+# Mako isn't running, just hide the block
+modes=$(makoctl mode 2>/dev/null) || exit 0
+
+if grep -qx "$DND_MODE" <<< "$modes"; then
+    echo "<span color=\"$DND_COLOR\">$DND_ICON</span>"
+    echo "<span color=\"$DND_COLOR\">$DND_ICON</span>"
+    echo "$DND_COLOR"
+else
+    echo "<span color=\"$ICON_COLOR\">$NOTIFY_ICON</span>"
+    echo "<span color=\"$ICON_COLOR\">$NOTIFY_ICON</span>"
+    echo "$ICON_COLOR"
+fi
